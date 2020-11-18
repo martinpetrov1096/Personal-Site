@@ -1,0 +1,19 @@
+@import-normalize; /* bring in normalize.css styles */
+
+body, html {
+   width: 100%;
+  
+}
+
+
+.blueText {
+   color: #376283 !important;
+}
+
+.blue {
+   background-color: #376283 !important;
+}
+
+.offwhite {
+   background-color: #FFFFFB;
+}

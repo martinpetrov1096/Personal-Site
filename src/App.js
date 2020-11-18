@@ -1,24 +1,39 @@
-import logo from './logo.svg';
-import './App.css';
+
+import Home from './sections/home';
+import Timeline from './sections/timeline';
+import Skills from './sections/skills';
+import Contact from './sections/contact';
+import ReactFullpage from '@fullpage/react-fullpage';
+import './styles/global.css';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+     <ReactFullpage
+      //fullpage options
+      licenseKey = {'YOUR_KEY_HERE'}
+      scrollingSpeed = {1000} /* Options here */
+   
+      render={({ state, fullpageApi }) => {
+         return (
+            <main>
+               
+               <ReactFullpage.Wrapper>
+                  
+                  <Home></Home>
+                  
+                  <Timeline></Timeline>
+                  <Skills></Skills>
+                  <Contact></Contact>
+               </ReactFullpage.Wrapper>
+            </main>
+               
+
+
+         );
+      }}
+      />
+      
+    
   );
 }
 
