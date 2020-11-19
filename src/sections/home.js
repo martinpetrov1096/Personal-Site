@@ -13,7 +13,7 @@ export default function Home(props) {
    return (
       <main className={styles.main}>
          <Name></Name>
-         <Resume className="resume" start={0} end={2}></Resume>
+         <Resume className="resume" start={0} end={3}></Resume>
       </main>
 
    )

@@ -1,6 +1,6 @@
 import React, { useCallback } from 'react';
 import { useSpring } from 'react-spring'
-
+import { config } from 'react-spring'
 import Navigation from './components/navbar';
 import Home from './sections/home';
 import Timeline from './sections/timeline';
@@ -16,7 +16,7 @@ import './styles/global.css';
 export const ScrollContext = React.createContext();
 
 function App() {
-   const [{ scroll }, setScroll] = useSpring(() => ({ scroll: 0 }));
+   const [{ scroll }, setScroll] = useSpring( () => ({ scroll: 0 }));
    const onScroll = useCallback(e => void setScroll({ scroll: e.target.scrollTop / (window.innerHeight / 2) }), [])
   
    return (
