@@ -1,37 +1,11 @@
-img {
+.img {
    position: absolute;
-   transform: rotate(-32deg);
+   /* transform: rotate(-32deg); */
    box-shadow:  20px 20px 60px #d9d9d5, 
    -20px -20px 60px #ffffff;
    animation-fill-mode: both;
-   animation: mymove 10s 1;
+  
 }
-
-tranform {
-
-}
-
-@keyframes mymove {
-
-   33% {
-      transform: rotate(0deg);
-      top: 130vh;
-   }
-
-   66% {
-      transform: rotate(0deg);
-      opacity: 100;
-      top: 150vh;
-      left: -500px;
-   }
-   100% {
-      transform: rotate(10deg);
-      opacity: 0;
-      top: 150vh;
-      left: -1000px;
-   }
-}
-
 
 @media only screen and (min-width: 1801px) {
    img {

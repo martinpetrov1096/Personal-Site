@@ -1,7 +1,7 @@
 
 export default function Timeline(props) {
    return (
-      <main className="section">  
+      <main>  
          <h1>Timeline</h1>
       </main>
    )

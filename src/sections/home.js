@@ -4,16 +4,16 @@
 import Name from '../components/name';
 import Resume from '../components/resume';
 
-import '../styles/home.css';
+import styles from '../styles/home.module.css';
 
 export default function Home(props) {
 
   
 
    return (
-      <main className="section">
+      <main className={styles.main}>
          <Name></Name>
-         <Resume className="resume" ></Resume>
+         <Resume className="resume" start={0} end={2}></Resume>
       </main>
 
    )

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 
-import '../styles/components/navbar.css';
+import '../styles/components/navbar.module.css';
 import '../styles/global.css';
 
 export default function Navigation(props) {
