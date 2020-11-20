@@ -1,30 +1,12 @@
-.img {
-   position: absolute;
-   /* transform: rotate(-32deg); */
-   box-shadow:  20px 20px 60px #d9d9d5, 
-   -20px -20px 60px #ffffff;
-   animation-fill-mode: both;
-  
-}
+.container {
+   padding-top: 50vh;
 
-@media only screen and (min-width: 1801px) {
-   img {
-      top: 70vh;
-      left: -500px;
-      width: 1100px;
-   }
+   height: calc(100vh);
+   display: flex;
+   flex-flow: row;
+   justify-content: space-around;
+   align-items: flex-start;
 }
-@media only screen and (min-width: 1301px) and (max-width: 1800px){
-   img {
-      top: 70vh;
-      left: -400px;
-      width: 900px;
-   }
-}
-@media only screen and (min-width: 900px) and (max-width: 1300px){
-   img {
-      top: 90vh;
-      left: -200px;
-      width: 650px;
-   }
+.img {
+   height: 80vh;
 }

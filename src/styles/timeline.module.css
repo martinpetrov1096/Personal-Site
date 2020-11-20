@@ -1,6 +1,11 @@
-main {
+.container {
    display: flex;
    justify-content: center;
    align-items: center;
    height: calc(300vh);
+}
+
+.line {
+   width: 30px;
+   height: 250vh;
 }

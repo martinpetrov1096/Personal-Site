@@ -1,8 +1,17 @@
+import NavText from '../components/navText';
+import ProjectCard from '../components/projectCard';
+import global from '../styles/global.module.css';
+import styles from '../styles/timeline.module.css';
+
 
 export default function Timeline(props) {
    return (
-      <main>  
-         <h1>Timeline</h1>
+      <main className={styles.container}>  
+         <div>Odometer</div>         
+         <div className={`${styles.line} ${global.blue} ${global.indentAccent}`}></div>
+         <ProjectCard></ProjectCard>
+         <NavText section="Projects"></NavText>
+         
       </main>
    )
 }

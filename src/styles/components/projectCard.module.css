@@ -1,0 +1,6 @@
+.card {
+   width: 500px;
+   height: 300px;
+   background-color: blue;
+   clip-path: polygon(35% 55%, 40% 51%, 100% 52%, 100% 85%, 39% 84%, 34% 75%, 14% 68%);
+}

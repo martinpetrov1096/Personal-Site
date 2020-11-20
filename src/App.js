@@ -1,12 +1,14 @@
 import React, { useCallback } from 'react';
-import { useSpring } from 'react-spring'
-import { config } from 'react-spring'
+import {useSpring } from 'react-spring'
+import {  } from 'react-spring'
 import Navigation from './components/navbar';
 import Home from './sections/home';
+import Resume from './sections/resume';
 import Timeline from './sections/timeline';
 import Skills from './sections/skills';
 import Contact from './sections/contact';
-import './styles/global.css';
+import global from './styles/global.module.css';
+import './styles/root.css';
 
 
 /**
@@ -20,10 +22,11 @@ function App() {
    const onScroll = useCallback(e => void setScroll({ scroll: e.target.scrollTop / (window.innerHeight / 2) }), [])
   
    return (
-      <ScrollContext.Provider value={scroll}>
-         <main className="container" onScroll={onScroll}>  
-            <Navigation></Navigation>             
+      <ScrollContext.Provider value={scroll} style={{color: 'red !important'}} >
+         <main className={global.container} onScroll={onScroll}>  
+       
             <Home  onScroll={onScroll}></Home>
+            <Resume ></Resume>
             <Timeline></Timeline>
             <Skills></Skills>
             <Contact></Contact>
