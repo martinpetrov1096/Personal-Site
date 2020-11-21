@@ -1,14 +1,20 @@
-import React, { useState, useEffect, useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import {ScrollContext} from '../App';
 import { animated } from 'react-spring';
-import NavText from '../components/navText';
+import {useSpring } from 'react-spring'
 import resume from '../resume.svg';
 import styles from '../styles/resume.module.css';
 import global from '../styles/global.module.css';
 
 export default function Resume() {
-   let scroll = useContext(ScrollContext)
-   
+
+   let pos = useContext(ScrollContext);
+   const [{ scroll }, setScroll] = useSpring( () => ({ scroll: 0 }));
+   useEffect(() => {
+      setScroll(pos);
+   }, [pos])
+
+       
    const transform = scroll.interpolate({
       range: [0,1.5],
       output: [0, 100],
@@ -18,9 +24,8 @@ export default function Resume() {
       return `translate3d(${s * (30/100) - 30}vw,${s * (40/100)-40}vh,0) rotate(${(s * 32/100)-32}deg)`;      
    });
    return(
-      <div className={styles.container}>
+      <section className={styles.container}>
          <animated.img src={resume} style={{transform }} className={`${styles.img} ${global.card10}`}></animated.img>
-         <NavText section="Resume"></NavText>
-      </div>
+      </section>
    )
 }

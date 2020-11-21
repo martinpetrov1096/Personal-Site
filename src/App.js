@@ -1,6 +1,4 @@
-import React, { useCallback } from 'react';
-import {useSpring } from 'react-spring'
-import {  } from 'react-spring'
+import React, { useCallback, useState } from 'react';
 import Navigation from './components/navbar';
 import Home from './sections/home';
 import Resume from './sections/resume';
@@ -9,7 +7,7 @@ import Skills from './sections/skills';
 import Contact from './sections/contact';
 import global from './styles/global.module.css';
 import './styles/root.css';
-
+import styles from './styles/app.module.css';
 
 /**
  * Description. @ScrollContext stores the current Y offset
@@ -18,19 +16,23 @@ import './styles/root.css';
 export const ScrollContext = React.createContext();
 
 function App() {
-   const [{ scroll }, setScroll] = useSpring( () => ({ scroll: 0 }));
-   const onScroll = useCallback(e => void setScroll({ scroll: e.target.scrollTop / (window.innerHeight / 2) }), [])
+   const [scroll, setScroll] = useState(0);
+   const onScroll = useCallback(e => void setScroll({ scroll: e.target.scrollTop / (window.innerHeight) }), [])
   
    return (
-      <ScrollContext.Provider value={scroll} style={{color: 'red !important'}} >
-         <main className={global.container} onScroll={onScroll}>  
-       
-            <Home  onScroll={onScroll}></Home>
-            <Resume ></Resume>
-            <Timeline></Timeline>
-            <Skills></Skills>
-            <Contact></Contact>
-         </main>
+      <ScrollContext.Provider value={scroll}>
+         <div className={styles.mainCont}>
+            <Navigation pagePos={[0,1,2,3,4]}></Navigation>
+            <main className={styles.contentCont} onScroll={onScroll}>  
+                  
+               <Home></Home>
+               <Resume ></Resume>
+               <Timeline></Timeline>
+               <Timeline></Timeline>
+               <Timeline></Timeline>
+            </main>
+         </div>
+         
       </ScrollContext.Provider>
    );
 }

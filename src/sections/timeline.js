@@ -6,12 +6,12 @@ import styles from '../styles/timeline.module.css';
 
 export default function Timeline(props) {
    return (
-      <main className={styles.container}>  
+      <section className={styles.container}>  
          <div>Odometer</div>         
          <div className={`${styles.line} ${global.blue} ${global.indentAccent}`}></div>
-         <ProjectCard></ProjectCard>
+            <ProjectCard></ProjectCard>
          <NavText section="Projects"></NavText>
          
-      </main>
+      </section>
    )
 }

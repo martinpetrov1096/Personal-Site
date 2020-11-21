@@ -8,13 +8,13 @@ import styles from '../styles/home.module.css';
 
 export default function Home(props) {
 
-  
+   
 
    return (
-      <main className={styles.main}>
+      <section className={styles.main}>
          <Name></Name>
 
-      </main>
+      </section>
 
    )
 }
