@@ -16,16 +16,22 @@ export default function Resume() {
 
        
    const transform = scroll.interpolate({
-      range: [0,1.5],
+      range: [0,1],
       output: [0, 100],
       extrapolate: 'clamp' 
    })
    .interpolate(s => {
-      return `translate3d(${s * (30/100) - 30}vw,${s * (40/100)-40}vh,0) rotate(${(s * 32/100)-32}deg)`;      
+      return `translate3d(${s * (10/100) - 10}vw,${s * (10/100)-10}vh,0) rotate(${(s * 10/100)-22}deg)`;      
+     //return `translate3d(0,0,0) rotate(-20deg)`;
    });
    return(
-      <section className={styles.container}>
+      <section className={`${styles.cont} ${global.offwhite}`}>
          <animated.img src={resume} style={{transform }} className={`${styles.img} ${global.card10}`}></animated.img>
+         <div className={`${global.card10} ${styles.notecard}`}>
+            <h2>Busy?</h2>
+            <h2>Here's my resume</h2>
+
+         </div>
       </section>
    )
 }

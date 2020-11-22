@@ -12,6 +12,9 @@ html, body, #root {
 .accent {
    background-color: #376283 !important;
 }
+.offwhite {
+   background-color: #FFFFF9;
+}
 .main {
    background-color: #FFFFFB;
 }
@@ -28,6 +31,7 @@ html, body, #root {
                inset -5px -5px 10px #467da8;
 }
 .card10 {
+   margin: 20px;
    box-shadow:  10px 10px 20px #b3b3b0, 
    -10px -10px 20px #ffffff;
 }

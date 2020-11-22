@@ -37,3 +37,11 @@
  - Name
  - Timeline
  - Apple Pencil?
+
+
+
+ ## TODO
+  - Add download button to resume section
+  - Add mobile css layout
+  - Make sure all of the box-shadows are correct
+  - Make contact me be a pencil w/ handwriting text

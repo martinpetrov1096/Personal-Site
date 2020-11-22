@@ -1,6 +1,67 @@
-.card {
-   width: 500px;
-   height: 300px;
-   background-color: blue;
-   clip-path: polygon(35% 55%, 40% 51%, 100% 52%, 100% 85%, 39% 84%, 34% 75%, 14% 68%);
+
+.cont {
+   margin: 200px 30px 1000px 50px;
+   border-radius: 5px;
+   padding: 40px;
+
+   display: flex;
+   flex-flow: column nowrap;
+   justify-content: center;
+   font-family: 'Oswald', sans-serif;
+   font-weight: 300;
+}
+.header{
+   display: flex;
+   flex-flow: flex wrap;
+   align-items: baseline;
+}
+.header > h4 {
+   font-weight: 300;
+   margin: 10px;
+}
+.bullets {
+   line-height: 1.5;
+}
+.iconsCont {
+   display: flex;
+   flex-flow: row wrap;
+   align-items: flex-start;
+}
+.iconsCont > i {
+   font-size: 22px !important;
+   padding: 5px;
+}
+
+
+@media (min-width: 1400px) {
+   .header > h4 {
+      font-size: 40px;
+   }
+   .bullets {
+      font-size: 1.5;
+   }   
+}
+@media (min-width: 1100px) and (max-width: 1399px) {
+   .header > h4 {
+      font-size: 32px;
+   }
+   .bullets {
+      font-size: 1.5;
+   }  
+}
+@media (min-width: 800px) and (max-width: 1099px) {
+   .header > h4 {
+      font-size: 32px;
+   }
+   .bullets {
+      font-size: 1.5;
+   }  
+}
+@media (max-width: 799px) {
+   .cont > h4 {
+      font-size: 32px;
+   }
+   .bullets {
+      font-size: 1.5;
+   }  
 }

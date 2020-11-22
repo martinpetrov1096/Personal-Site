@@ -1,4 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500&display=swap');
 
 nav {
    z-index: 99;
@@ -24,7 +23,8 @@ nav {
    border: none;
 
    background-size: 100px 1100px;
-   background-image: linear-gradient(to bottom, white 500px, #376283 500px 600px, white 600px 1100px);    -webkit-transition: all 1s;
+   background-image: linear-gradient(to bottom, #FFFFF9 500px, #376283 500px 600px, #FFFFF9 600px 1100px);
+   -webkit-transition: all 1s;
    -moz-transition: all .4s ease-out;
    transition: all .4s ease-in-out;
    box-shadow: inset 5px 5px 10px #b3b3b0, 
@@ -79,7 +79,6 @@ nav {
 
 .visible {
    opacity: 100% !important;
-
 }
 /* 
  * The following is a bunch of classes needed to

@@ -1,20 +1,13 @@
 
 
-
-import Name from '../components/name';
-
-
 import styles from '../styles/home.module.css';
-
-export default function Home(props) {
-
-   
-
+import global from '../styles/global.module.css';
+export default function Home() {
    return (
-      <section className={styles.main}>
-         <Name></Name>
+      <section className={`${styles.cont} ${global.offwhite}`}>
+         <h1 className={styles.name}>Mart<span className={`${global.accentText} ${styles.span}`}>i</span>n Petrov</h1>
+
 
       </section>
-
    )
 }

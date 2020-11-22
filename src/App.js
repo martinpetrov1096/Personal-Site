@@ -8,7 +8,7 @@ import Contact from './sections/contact';
 import global from './styles/global.module.css';
 import './styles/root.css';
 import styles from './styles/app.module.css';
-
+import myProjects from './projects.json';
 /**
  * Description. @ScrollContext stores the current Y offset
  * on the page. Will be useful for animating components
@@ -21,15 +21,13 @@ function App() {
   
    return (
       <ScrollContext.Provider value={scroll}>
-         <div className={styles.mainCont}>
+         <div className={`${styles.mainCont} ${global.offwhite}`}>
             <Navigation pagePos={[0,1,2,3,4]}></Navigation>
-            <main className={styles.contentCont} onScroll={onScroll}>  
+            <main className={`${styles.contentCont}`} onScroll={onScroll}>  
                   
                <Home></Home>
                <Resume ></Resume>
-               <Timeline></Timeline>
-               <Timeline></Timeline>
-               <Timeline></Timeline>
+               <Timeline projects={myProjects}></Timeline>
             </main>
          </div>
          

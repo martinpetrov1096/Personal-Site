@@ -1,11 +1,18 @@
-.container {
+.cont {
    display: flex;
+   flex-flow: row nowrap;
    justify-content: center;
-   align-items: center;
-   height: calc(300vh);
+   align-content: flex-start;
+
 }
 
+
 .line {
+   align-self: stretch;
    width: 30px;
-   height: 250vh;
+
+   border-radius: 5px;
+}
+.projects {
+   align-self: flex-start;
 }

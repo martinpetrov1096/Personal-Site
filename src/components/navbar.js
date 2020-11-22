@@ -53,7 +53,7 @@ export default function Navigation({pagePos}) {
    }, [scroll]);
 
    return (
-      <nav>
+      <nav className={`${global.offwhite}`}>
          <h3 className={`${styles.curTab} ${global.indentMain5} ${global.accentText} ${mobileTab}`}>
             <TextTransition
                text={tabs[curTab]}

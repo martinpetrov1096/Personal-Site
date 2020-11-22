@@ -6,12 +6,7 @@
 }
 .contentCont {
    height: 100% !important;
-   display: flex;
-   flex-flow: column;
-   position: relative;
    flex-grow: 1;
-
-   
    overflow: hidden;
    overflow-y: scroll;
    -ms-overflow-style: none;  /* IE and Edge */
