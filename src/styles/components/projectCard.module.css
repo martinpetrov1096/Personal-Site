@@ -1,5 +1,6 @@
 
 .cont {
+   max-width: 800px;
    margin: 200px 30px 1000px 50px;
    border-radius: 5px;
    padding: 40px;
@@ -19,17 +20,31 @@
    font-weight: 300;
    margin: 10px;
 }
-.bullets {
-   line-height: 1.5;
-}
-.iconsCont {
+
+.detailsCont {
    display: flex;
    flex-flow: row wrap;
-   align-items: flex-start;
+   align-items: baseline;
+   justify-content: stretch;
+   padding: 20px;
 }
-.iconsCont > i {
-   font-size: 22px !important;
+.detail > h6{
+   text-align: center;
+   margin: 0 10px;
+   font-weight: 300;
+}
+.detail > h4 {
+   font-size: 14px;
+   margin: 0;
+   text-align: center;
+}
+.detail > i {
+   font-size: 42px !important;
    padding: 5px;
+}
+
+.bullets {
+   line-height: 1.5;
 }
 
 

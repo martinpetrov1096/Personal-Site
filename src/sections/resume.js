@@ -5,7 +5,7 @@ import {useSpring } from 'react-spring'
 import resume from '../resume.svg';
 import styles from '../styles/resume.module.css';
 import global from '../styles/global.module.css';
-
+import StickyNote from '../components/stickyNote';
 export default function Resume() {
 
    let pos = useContext(ScrollContext);
@@ -27,11 +27,11 @@ export default function Resume() {
    return(
       <section className={`${styles.cont} ${global.offwhite}`}>
          <animated.img src={resume} style={{transform }} className={`${styles.img} ${global.card10}`}></animated.img>
-         <div className={`${global.card10} ${styles.notecard}`}>
-            <h2>Busy?</h2>
-            <h2>Here's my resume</h2>
-
-         </div>
+         <StickyNote 
+            tilt="10"
+            text="Busy? Here's my resume"
+            subText="(TODO: Add download button)"
+         ></StickyNote>
       </section>
    )
 }

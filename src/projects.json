@@ -14,8 +14,11 @@
          "dot-net",
          "docker"
       ],
+      "linesOfCode": 10000,
+      "numCommits": 350,
       "githubUrl":"",
-      "description": [
+      "description": "A unique approach to a password manager that can keep a user's credentials unreachable by malware that is on the computer. To achieve this, browser sends randomly generated tokens in place of credentials, and then substitute the real credentials at the latest possible moment possible, via a proxy.",
+      "accomplishments": [
          "Oversaw the development of a unique password management system that allows users to securely enter their credentials from a computer, regardless of any malware on it",
          "Developed a microservice architecture backend consisting of a handful of services written in .NET Core and Node JS",
          "Used Docker Compose to containerize and synchronize all microservices to allow other developers to run the backend with 1 command",
@@ -37,11 +40,103 @@
          "bootstrap"
       ],
       "githubUrl": "",
-      "description": [
+      "description": "",
+      "accomplishments": [
+         "Built a web app that allows users to find solutions to homework or practice problems that are hidden behind the paywalls of Chegg.com",
+         "Used .NET Core to create a backend that can scrape Chegg.com in real time and return the solutions to the client."
+      ]
+   },
+   {
+      "name": "Personal Site",
+      "startDate": "December 2019",
+      "endDate":"December 2019",
+      "category":[
+         "web-dev"
+      ],
+      "tools": [
+         "dot-net",
+         "bootstrap"
+      ],
+      "githubUrl": "",
+      "description": "",
+      "accomplishments": [
+         "Built a web app that allows users to find solutions to homework or practice problems that are hidden behind the paywalls of Chegg.com",
+         "Used .NET Core to create a backend that can scrape Chegg.com in real time and return the solutions to the client."
+      ]
+   },
+   {
+      "name": "AI-API",
+      "startDate": "December 2019",
+      "endDate":"December 2019",
+      "category":[
+         "web-dev"
+      ],
+      "tools": [
+         "dot-net",
+         "bootstrap"
+      ],
+      "githubUrl": "",
+      "description": "",
+      "accomplishments": [
+         "Built a web app that allows users to find solutions to homework or practice problems that are hidden behind the paywalls of Chegg.com",
+         "Used .NET Core to create a backend that can scrape Chegg.com in real time and return the solutions to the client."
+      ]
+   },
+   {
+      "name": "Home Server",
+      "startDate": "December 2019",
+      "endDate":"December 2019",
+      "category":[
+         "web-dev"
+      ],
+      "tools": [
+         "dot-net",
+         "bootstrap"
+      ],
+      "githubUrl": "",
+      "description": "",
+      "accomplishments": [
+         "Built a web app that allows users to find solutions to homework or practice problems that are hidden behind the paywalls of Chegg.com",
+         "Used .NET Core to create a backend that can scrape Chegg.com in real time and return the solutions to the client."
+      ]
+   },
+   {
+      "name": "Restaurant Tinder",
+      "startDate": "December 2019",
+      "endDate":"December 2019",
+      "category":[
+         "web-dev"
+      ],
+      "tools": [
+         "dot-net",
+         "bootstrap"
+      ],
+      "githubUrl": "",
+      "description": "",
+      "accomplishments": [
+         "Built a web app that allows users to find solutions to homework or practice problems that are hidden behind the paywalls of Chegg.com",
+         "Used .NET Core to create a backend that can scrape Chegg.com in real time and return the solutions to the client."
+      ]
+   },
+   {
+      "name": "Smart Pi LED",
+      "startDate": "December 2019",
+      "endDate":"December 2019",
+      "category":[
+         "web-dev"
+      ],
+      "tools": [
+         "dot-net",
+         "bootstrap"
+      ],
+      "githubUrl": "",
+      "description": "",
+      "accomplishments": [
          "Built a web app that allows users to find solutions to homework or practice problems that are hidden behind the paywalls of Chegg.com",
          "Used .NET Core to create a backend that can scrape Chegg.com in real time and return the solutions to the client."
       ]
    }
+   
 ]
 
 

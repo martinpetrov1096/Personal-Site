@@ -1,0 +1,25 @@
+.notecard {
+   width: 30vw;
+   height: 15vw;
+   margin-right: 15px;
+   border-radius: 5px;
+
+
+   display: flex;
+   flex-flow: column nowrap;
+   justify-content: center;
+   align-items: center;
+   background: #FFFFCB;
+
+   font-family: 'Indie Flower', cursive;
+
+   -webkit-backface-visibility: hidden;
+}
+.notecard > h2  {
+   margin: 0;
+   font-size: 2vw;
+}
+
+.notecard > h6 {
+   font-size: 1vw;
+}
