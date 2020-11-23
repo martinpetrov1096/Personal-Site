@@ -8,7 +8,7 @@ import Contact from './sections/contact';
 import global from './styles/global.module.css';
 import './styles/root.css';
 import styles from './styles/app.module.css';
-import myProjects from './projects.json';
+import { projects, skills } from './info.json';
 /**
  * Description. @ScrollContext stores the current Y offset
  * on the page. Will be useful for animating components
@@ -27,7 +27,8 @@ function App() {
                   
                <Home></Home>
                <Resume ></Resume>
-               <Timeline projects={myProjects}></Timeline>
+               <Timeline projects={projects}></Timeline>
+               <Skills skills={skills}/>
             </main>
          </div>
          

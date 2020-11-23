@@ -1,6 +1,79 @@
-main {
+.sectionCont {
    display: flex;
-   justify-content: center;
+   flex-flow: column nowrap;
    align-items: center;
-   height: 100vh;
+   font-family: 'Oswald', sans-serif;
 }
+.sectionCont > h1 {
+   font-family: 'Oswald', sans-serif;
+   font-size: 80px;
+}
+
+.colsCont {
+
+   display: flex;
+   justify-content: space-around;
+   flex-flow: row wrap;
+   align-items: center;
+}
+
+.col {
+   margin: 100px;
+   display: flex;
+   flex-flow: row;
+   justify-content: center;
+}
+.iconsCont {
+   margin-top: 50px;
+
+   display: flex; 
+   flex-flow: row wrap; 
+}
+
+.detail {
+   flex-basis: 33%;
+
+   display: flex;
+   flex-flow: column;
+   justify-content: flex-end;
+   align-items: center;
+   transition: all .2s ease-in-out;
+}
+.detail:hover {
+   transform: rotate(0deg) !important;
+   animation: wiggle 1s 1;
+   animation-fill-mode: backwards;
+}
+ 
+.detail > h6, .detail > a {
+   text-align: center;
+   margin: 0 0;
+   padding: 5px;
+   font-weight: 300;
+   font-size: 14px;
+   text-decoration: none;
+   color: black;
+}
+
+.detail > h4 {
+   font-size: 30px;
+   margin: 0;
+   padding: 5px;
+   text-align: center;
+}
+.detail > i {
+   font-size: 82px !important;
+   padding: 5px;
+   text-shadow:  20px 20px 40px #b3b3b0, 
+   -20px -20px 40px #ffffff;
+}
+
+@media (max-width: 1100px) {
+
+   .col {
+      flex-flow: column;
+      margin: 40px;
+   }
+   
+}
+

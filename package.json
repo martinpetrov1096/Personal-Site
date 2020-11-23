@@ -9,6 +9,7 @@
     "devicon": "^2.2.0",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
+    "react-reveal": "^1.2.2",
     "react-scripts": "4.0.0",
     "react-spark-scroll-gsap": "^4.0.0",
     "react-spring": "^8.0.27",

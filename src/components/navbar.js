@@ -43,7 +43,7 @@ export default function Navigation({pagePos}) {
       let sections = Array.from(document.getElementsByTagName('section'));
       sections = sections.map((s) => s.getBoundingClientRect().bottom );
       for (const [i,v] of sections.entries()) {
-         if (v >= 0) {
+         if (v >= 300) {
             setCurTab(i);
             setMobileTab(styles.visible);
             setTimeout(() => setMobileTab(''), 1000);

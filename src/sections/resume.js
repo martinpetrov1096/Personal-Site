@@ -21,7 +21,7 @@ export default function Resume() {
       extrapolate: 'clamp' 
    })
    .interpolate(s => {
-      return `translate3d(${s * (10/100) - 10}vw,${s * (10/100)-10}vh,0) rotate(${(s * 10/100)-22}deg)`;      
+      return `translate3d(${s * (10/100) - 10}vh,${s * (20/100)-20}vh,0) rotate(${(s * 10/100)-22}deg)`;      
      //return `translate3d(0,0,0) rotate(-20deg)`;
    });
    return(

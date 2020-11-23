@@ -1,11 +1,19 @@
 .cont {
    display: flex;
+   flex-flow: row;
    justify-content: space-around;
    align-items: flex-start;
    margin-bottom: 300px;
 }
 .img {   
 
-   height: 60vw;
+   height: max(90vh, 60vw);
    
+}
+
+@media (max-width: 1200px) {
+
+   .cont {
+      flex-flow: column;
+   }
 }

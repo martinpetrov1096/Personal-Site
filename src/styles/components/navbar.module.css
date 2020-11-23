@@ -1,6 +1,8 @@
 
 nav {
    z-index: 99;
+   height: 100%;
+   margin: 20px;
    align-self: center;
    background: inherit;
    display: flex;
@@ -8,20 +10,22 @@ nav {
    align-items: center;
 }
 .curTab {
-   font-family: 'Oswald', sans-serif !important;
-   font-weight: 400 !important;
-   border-radius: 5px !important;
-   text-align: center !important;
+   margin-right: 20px;
+   border-radius: 5px;
+   font-family: 'Oswald', sans-serif;
+   font-weight: 400;
+   text-align: center;
 }
 .buttonCont {
+   height: 50%;
+
    display: flex;
    flex-flow: column;
+   justify-content: space-around;
 }
 .buttonCont > button {
-
    border-radius: 100%;
    border: none;
-
    background-size: 100px 1100px;
    background-image: linear-gradient(to bottom, #FFFFF9 500px, #376283 500px 600px, #FFFFF9 600px 1100px);
    -webkit-transition: all 1s;
@@ -38,42 +42,47 @@ nav {
    .curTab {
       font-size: 32px;
       width: 115px;
-
       padding: 15px !important;
    }
-
    .buttonCont > button {
-      margin: 12px 25px;
       height: 55px;
       width: 55px;
    }
 }
-@media (min-width: 1100px) and (max-width: 1399px) {
+@media (min-width: 900px) and (max-width: 1399px) {
    .curTab {
       font-size: 24px;
       width: 85px;
    }
-
-   .buttonCont > button {
-      margin: 10px 15px;
+   .buttonCont > button { 
       height: 35px;
       width: 35px;
    }
 }
-@media (max-width: 1099px) {
-   .curTab {
-      position: fixed;
-      right: 70px;
-      opacity: 0;
-         box-shadow:  10px 10px 20px #b3b3b0, 
-   -10px -10px 20px #ffffff !important;
-      transition: opacity .2s ease-in-out .1s;
+@media (max-width: 899px) {
+   nav {
+      height: auto;
+      width: 100%;
+      margin: 5px;
+      justify-content: center;
    }
+   .curTab {
+      flex-basis: 1;
+      font-size: 14px;
+      width: 45px;
+      border-radius: 2px;
+   }
+   .buttonCont {
+      flex-basis: 2;
+      flex-grow: 1;
 
+      height: auto;
+      max-width: 200px;
+      flex-flow: row;
+   }
    .buttonCont > button {
-      margin: 15px 25px;
-      height: 20px;
-      width: 20px;
+      height: 25px;
+      width: 25px;
    }
 }
 

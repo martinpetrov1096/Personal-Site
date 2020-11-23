@@ -16,3 +16,9 @@
 .contentCont::-webkit-scrollbar {
    display: none;
  }
+
+ @media (max-width: 899px){
+   .mainCont{
+      flex-flow: column-reverse;
+   }
+}

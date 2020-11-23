@@ -1,7 +1,8 @@
 .notecard {
-   width: 30vw;
-   height: 15vw;
-   margin-right: 15px;
+   z-index: 50;
+   width: max(30vw,30vh);
+   height: max(15vw,15vh);
+   margin: 20px;
    border-radius: 5px;
 
 
@@ -17,9 +18,17 @@
 }
 .notecard > h2  {
    margin: 0;
-   font-size: 2vw;
+   font-size: max(2vw, 18px);
 }
 
 .notecard > h6 {
-   font-size: 1vw;
+   font-size: max(1vw, 12px);
+}
+
+@media (max-width: 1200px) {
+
+   .notecard {
+      margin: 100px 100px 0 100px;
+   }
+   
 }
