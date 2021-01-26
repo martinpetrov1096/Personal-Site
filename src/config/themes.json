@@ -1,0 +1,23 @@
+{
+   "light": {
+      "bgColor": "#FFFFF9",
+      "contentBgColor": "#FFFFF9",
+      "color": "#000000",
+      "accentColor": "#376283",
+      "boxShadowSmall": "",
+      "boxShadowBig": "10px 10px 20px #b3b3b0, -10px -10px 20px #ffffff;",
+      "boxShadowInset": "inset 5px 5px 10px #b3b3b0, inset -5px -5px 10px #ffffff",
+      "transition": "all .5s ease-in-out"
+   },
+   "dark": {
+      "bgColor": "#000000",
+      "contentBgColor": "#232323",
+      "color": "#FFFFFF",
+      "accentColor": "#3f51b5",
+      "boxShadowSmall": "",
+      "boxShadowBig": "",
+      "boxShadowInset": "inset 0px 0px 18px 11px rgba(10,10,10,1)",
+      "transition": "all .5s ease-in-out"
+   }
+}
+

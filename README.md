@@ -7,20 +7,6 @@
 - Skills
 - Contact
 
-## Ideas
- - Make projects be a scrollable timeline
- - Link skills to projects somehow
- - Contact, just throw email address anywhere, and grab it automatically
- - Link to github commits
- - Roy's background thing but connecting my skills??
-
-
-## New Idea
- - Make it look like a desk
- - Add apple pencil
- - Add skills like crossword or like scrabble
- - Paralax scrolling for resume + timeline, or in 
- other words, make background be faster
 
 
 ## Sections
@@ -29,16 +15,6 @@
  - Skills
  - Resume
  - Contact
-
-## Components
- - Navbar
- - Resume
- - Navigation button
- - Name
- - Timeline
- - Apple Pencil?
-
-
 
  ## TODO
   - Add download button to resume section
