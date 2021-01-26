@@ -4,8 +4,8 @@
       "contentBgColor": "#FFFFF9",
       "color": "#000000",
       "accentColor": "#376283",
-      "boxShadowSmall": "",
-      "boxShadowBig": "10px 10px 20px #b3b3b0, -10px -10px 20px #ffffff;",
+      "boxShadowSmall": "5px 5px 10px #b3b3b0, -5px -5px 10px #ffffff",
+      "boxShadowBig": "10px 10px 20px #b3b3b0, -10px -10px 20px #ffffff",
       "boxShadowInset": "inset 5px 5px 10px #b3b3b0, inset -5px -5px 10px #ffffff",
       "transition": "all .5s ease-in-out"
    },

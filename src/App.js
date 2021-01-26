@@ -9,8 +9,6 @@ import Resume from './sections/resume';
 import sections from './config/sections.json';
 import themes from './config/themes.json';
 
-import global from './styles/global.module.css';
-
 
 
 export default function App() {
@@ -85,10 +83,10 @@ export default function App() {
 
    return (
       <ThemeProvider theme={theme}>
-         <Navigation curTab={curSection}/>
+         <Navigation curTab={curSection} scroll={scroll}/>
          <Main ref={mainRef}>
             <Home/>
-            <Resume pos={scroll}/>
+            <Resume scroll={scroll}/>
          </Main>
       </ThemeProvider>
    );

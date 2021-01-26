@@ -31,7 +31,7 @@ export default function Navigation(props) {
    };
 
    return (
-      <Nav>
+      <Nav raised={props.scroll}>
          <CurTab>
             <TextTransition
                text={props.curTab}
@@ -54,18 +54,24 @@ export default function Navigation(props) {
 const Nav = styled.nav`
    position: fixed;
    z-index: 99;
+   box-shadow: ${(props) => props.raised ? props.theme.boxShadowSmall : `none`};
+
    padding: 10px;
    width: calc(100% - 20px);
    height: 50px;
-
    align-self: center;
    background: ${(props) => props.theme.bgColor};
+
 
    display: flex;
    flex-flow: row;
    align-items: center;
    justify-content: center;
    transition: ${(props) => props.theme.transition};
+
+   @media screen and (max-width: 400px) {
+      justify-content: space-around;
+   }
 `;
 
 const CurTab = styled.h3`
@@ -76,7 +82,7 @@ const CurTab = styled.h3`
    flex-shrink: 2;
    flex-grow: 0;
    background: ${(props) => props.theme.contentBgColor};
-   color: ${(props) => props.theme.color};
+   color: ${(props) => props.theme.accentColor};
    font-family: 'Oswald', sans-serif;
    font-size: 22px;
    font-weight: 400;
@@ -87,7 +93,7 @@ const CurTab = styled.h3`
    @media screen and (max-width: 400px) {
       border-radius: 3px;
       font-size: 16px;
-      flex-basis: 40px;
+      flex-basis: 50px;
       padding: 10px;
    }
 `;
@@ -102,8 +108,8 @@ const ButtonCont = styled.div`
 
    @media screen and (max-width: 400px) {
       flex-basis: 150px;
-      flex-grow: 0;
    }
+
    &> button {  
       border-radius: 100%;
       border: none;
@@ -113,6 +119,7 @@ const ButtonCont = styled.div`
       background-image: linear-gradient(90deg, ${(props) => props.theme.contentBgColor} 500px, ${(props) => props.theme.accentColor} 500px 600px, ${(props) => props.theme.contentBgColor} 600px 1100px);
       transition: all .4s ease-in-out;
       box-shadow: ${(props) => props.theme.boxShadowInset};
+      
       @media screen and (max-width: 400px) {
          height: 20px;
          width: 20px;

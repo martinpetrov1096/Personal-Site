@@ -5,11 +5,7 @@
    align-items: flex-start;
    margin-bottom: 300px;
 }
-.img {   
 
-   height: max(90vh, 60vw);
-   
-}
 
 @media (max-width: 1200px) {
 
