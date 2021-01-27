@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export default function Home() {
+export const Home = () => {
 
    return (
       <Section >
@@ -8,6 +8,9 @@ export default function Home() {
       </Section>
    );
 }
+///////////////////////////////////////////////////////////////////
+///////////////////////////// CSS /////////////////////////////////
+///////////////////////////////////////////////////////////////////
 
 const Section = styled.section`
    height: 80vh;

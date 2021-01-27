@@ -1,55 +1,37 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import TextTransition from 'react-text-transition';
 import styled from 'styled-components'
 import sections from '../config/sections.json';
 
-import styles from '../styles/components/navbar.module.css';
+export default function Navigation({scroll, curTab}) {
 
-export default function Navigation(props) {
-   let classes = [
-      styles.shift1,
-      styles.shift2,
-      styles.shift3,
-      styles.shift4,
-      styles.shift5,
-      styles.shift6,
-      styles.shift7,
-      styles.shift8,
-      styles.shift9,
-      styles.shift10,
-      styles.shift11,
-   ].reverse();
-
-   const getButtonPos = (btnNum) => {
-      const sectionNum = sections.indexOf(props.curTab)
-
-      /* Makes sure there's no overflow */
-      if (btnNum - sectionNum + 5 > 11 || btnNum - sectionNum + 5 < 0) {
-         return classes[0];
-      }
-      return classes[btnNum - sectionNum + 5];
-   };
+   const sectionNum = useMemo(() => {
+      return sections.indexOf(curTab);
+   }, [curTab]);
 
    return (
-      <Nav raised={props.scroll}>
+      <Nav raised={scroll}>
          <CurTab>
             <TextTransition
-               text={props.curTab}
+               text={curTab}
                direction="down"
                noOverflow={true}
                inline={true}
             />
          </CurTab>
          <ButtonCont>
-            <button className={getButtonPos(0)}></button>
-            <button className={getButtonPos(1)}></button>
-            <button className={getButtonPos(2)}></button>
-            <button className={getButtonPos(3)}></button>
-            <button className={getButtonPos(4)}></button>
+            <Button num={0-sectionNum + 6}></Button>
+            <Button num={1-sectionNum + 6}></Button>
+            <Button num={2-sectionNum + 6}></Button>
+            <Button num={3-sectionNum + 6}></Button>
+            <Button num={4-sectionNum + 6}></Button>
          </ButtonCont>
       </Nav>
    );
 }
+///////////////////////////////////////////////////////////////////
+///////////////////////////// CSS /////////////////////////////////
+///////////////////////////////////////////////////////////////////
 
 const Nav = styled.nav`
    position: fixed;
@@ -68,6 +50,7 @@ const Nav = styled.nav`
    align-items: center;
    justify-content: center;
    transition: ${(props) => props.theme.transition};
+   transition: box-shadow .2s ease-in-out;
 
    @media screen and (max-width: 400px) {
       justify-content: space-around;
@@ -110,19 +93,21 @@ const ButtonCont = styled.div`
       flex-basis: 150px;
    }
 
-   &> button {  
-      border-radius: 100%;
-      border: none;
-      height: 30px;
-      width: 30px;
-      background-size: 1100px 100px;
-      background-image: linear-gradient(90deg, ${(props) => props.theme.contentBgColor} 500px, ${(props) => props.theme.accentColor} 500px 600px, ${(props) => props.theme.contentBgColor} 600px 1100px);
-      transition: all .4s ease-in-out;
-      box-shadow: ${(props) => props.theme.boxShadowInset};
-      
-      @media screen and (max-width: 400px) {
-         height: 20px;
-         width: 20px;
-      }
-   }
+`;
+
+const Button = styled.button`
+   border-radius: 100%;
+         border: none;
+         height: 30px;
+         width: 30px;
+         background-size: 1100px 100px;
+         background-image: linear-gradient(90deg, ${(props) => props.theme.contentBgColor} 500px, ${(props) => props.theme.accentColor} 500px 600px, ${(props) => props.theme.contentBgColor} 600px 1100px);
+         background-position: ${(props) => 1200 - (props.num * 100)}px 0;
+         transition: all .4s ease-in-out;
+         box-shadow: ${(props) => props.num === 6 ? props.theme.boxShadowInsetAccent : props.theme.boxShadowInset};
+         
+         @media screen and (max-width: 400px) {
+            height: 20px;
+            width: 20px;
+         }
 `;

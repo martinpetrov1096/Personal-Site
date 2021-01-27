@@ -7,11 +7,11 @@ import StickyNote from '../components/stickyNote';
  * @param {number} props.scroll The amount scroll
  * from the top of the page, in pixels
  */
-export default function Resume(props) {
+export const Resume = ({scroll}) => {
 
    return(
       <Section>
-         <Img src='resume.svg' unshift={props.scroll}/>
+         <Img src='resume.svg' unshift={scroll}/>
          <StickyNoteWrapper>
             <StickyNote 
                tilt="10"
@@ -23,6 +23,9 @@ export default function Resume(props) {
       </Section>
    );
 }
+///////////////////////////////////////////////////////////////////
+///////////////////////////// CSS /////////////////////////////////
+///////////////////////////////////////////////////////////////////
 
 const Section = styled.section`
    margin-bottom: 300px; // TODO: Remove eventually
@@ -49,7 +52,9 @@ const Img = styled.img`
    /**
     * Unshift the image if we are on the resume section
    */
-   transform: ${(props) => props.unshift ? `translate3d(0,0,0) rotate(0) scale(1)` : `translate3d(-20vw, 0vh, 0) rotate(-22deg) scale(1.2)` };
+   transform: ${(props) => props.unshift 
+      ? `translate3d(0,0,0) rotate(0) scale(1)` 
+      : `translate3d(-20vw, 0vh, 0) rotate(-22deg) scale(1.2)`};
 
    @media screen and (max-width: 1000px) {
       width: 80vw;

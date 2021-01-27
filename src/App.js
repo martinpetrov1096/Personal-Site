@@ -4,8 +4,9 @@ import './styles/root.css';
 import React, { useEffect, useState, useRef } from 'react';
 import styled, { ThemeProvider } from 'styled-components';
 import Navigation from './components/navbar';
-import Home from './sections/home';
-import Resume from './sections/resume';
+import { Home } from './sections/home';
+import { Resume } from './sections/resume';
+import { Projects } from './sections/projects';
 import sections from './config/sections.json';
 import themes from './config/themes.json';
 
@@ -87,12 +88,14 @@ export default function App() {
          <Main ref={mainRef}>
             <Home/>
             <Resume scroll={scroll}/>
+            <Projects/>
          </Main>
       </ThemeProvider>
    );
 }
-
-
+///////////////////////////////////////////////////////////////////
+///////////////////////////// CSS /////////////////////////////////
+///////////////////////////////////////////////////////////////////
 
 const Main = styled.main`
    background: ${(props) => props.theme.bgColor};
