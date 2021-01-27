@@ -26,6 +26,8 @@ const Wrapper = styled.div`
    justify-content: center;
    align-items: center;
 
+   transition: ${(props) => props.theme.transition};
+
    > h2 {
       font-size: 150%;
    }

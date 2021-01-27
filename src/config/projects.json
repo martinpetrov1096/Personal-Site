@@ -1,0 +1,207 @@
+[
+   {
+      "name": "What-To-Watch",
+      "imgUrl": "what-to-watch.png",
+      "fontColor": "white",
+      "size": "wide",
+      "startDate":"Jan 2021",
+      "endDate":"Jan 2021",
+      "category": [
+         "web-dev",
+         "dev-ops"
+      ],
+      "tools": [
+         "javascript",
+         "react",
+         "nodejs",
+         "dot-net",
+         "docker"
+      ],
+      "linesOfCode": 10000,
+      "numCommits": 350,
+      "githubUrl":"",
+      "description": "A unique approach to a password manager that can keep a user's credentials unreachable by malware that is on the computer. To achieve this, browser sends randomly generated tokens in place of credentials, and then substitute the real credentials at the latest possible moment possible, via a proxy.",
+      "accomplishments": [
+         "Oversaw the development of a unique password management system that allows users to securely enter their credentials from a computer, regardless of any malware on it",
+         "Developed a microservice architecture backend consisting of a handful of services written in .NET Core and Node JS",
+         "Used Docker Compose to containerize and synchronize all microservices to allow other developers to run the backend with 1 command",
+         "Set up scheduled API endpoint testing using Postman to help find bugs",
+         "Created a browser extension to communicate with our backend using vanilla JS",
+         "Worked with others on the React Native app",
+         "Contributed over 10,000 lines of code, and documented all API endpoints for the backend."
+      ]
+   },
+   {
+      "name": "Restaurant Tinder",
+      "imgUrl": "rest-tinder.png",
+      "fontColor": "white",
+      "size": "tall",
+      "startDate": "December 2019",
+      "endDate":"December 2019",
+      "category":[
+         "web-dev"
+      ],
+      "tools": [
+         "dot-net",
+         "bootstrap"
+      ],
+      "githubUrl": "",
+      "description": "",
+      "accomplishments": [
+         "Built a web app that allows users to find solutions to homework or practice problems that are hidden behind the paywalls of Chegg.com",
+         "Used .NET Core to create a backend that can scrape Chegg.com in real time and return the solutions to the client."
+      ]
+   },
+   {
+      "name": "Secure Password Manager",
+      "imgUrl": "",
+      "fontColor": "black",
+      "size": "normal",
+      "startDate":"April 2020",
+      "endDate":"October 2020",
+      "category": [
+         "web-dev",
+         "dev-ops"
+      ],
+      "tools": [
+         "javascript",
+         "react",
+         "nodejs",
+         "dot-net",
+         "docker"
+      ],
+      "linesOfCode": 10000,
+      "numCommits": 350,
+      "githubUrl":"",
+      "description": "A unique approach to a password manager that can keep a user's credentials unreachable by malware that is on the computer. To achieve this, browser sends randomly generated tokens in place of credentials, and then substitute the real credentials at the latest possible moment possible, via a proxy.",
+      "accomplishments": [
+         "Oversaw the development of a unique password management system that allows users to securely enter their credentials from a computer, regardless of any malware on it",
+         "Developed a microservice architecture backend consisting of a handful of services written in .NET Core and Node JS",
+         "Used Docker Compose to containerize and synchronize all microservices to allow other developers to run the backend with 1 command",
+         "Set up scheduled API endpoint testing using Postman to help find bugs",
+         "Created a browser extension to communicate with our backend using vanilla JS",
+         "Worked with others on the React Native app",
+         "Contributed over 10,000 lines of code, and documented all API endpoints for the backend."
+      ]
+   },
+   {
+      "name": "Homework Help Web Scraper",
+      "size": "normal",
+      "fontColor": "black",
+      "imgUrl": "",
+      "startDate": "December 2019",
+      "endDate":"December 2019",
+      "category":[
+         "web-dev"
+      ],
+      "tools": [
+         "dot-net",
+         "bootstrap"
+      ],
+      "githubUrl": "",
+      "description": "",
+      "accomplishments": [
+         "Built a web app that allows users to find solutions to homework or practice problems that are hidden behind the paywalls of Chegg.com",
+         "Used .NET Core to create a backend that can scrape Chegg.com in real time and return the solutions to the client."
+      ]
+   },
+   {
+      "name": "Personal Site",
+      "size": "normal",
+      "fontColor": "white",
+      "imgUrl": "",
+      "startDate": "December 2019",
+      "endDate":"December 2019",
+      "category":[
+         "web-dev"
+      ],
+      "tools": [
+         "dot-net",
+         "bootstrap"
+      ],
+      "githubUrl": "",
+      "description": "",
+      "accomplishments": [
+         "Built a web app that allows users to find solutions to homework or practice problems that are hidden behind the paywalls of Chegg.com",
+         "Used .NET Core to create a backend that can scrape Chegg.com in real time and return the solutions to the client."
+      ]
+   },
+   {
+      "name": "AI-API",
+      "size": "normal",
+      "imgUrl": "",
+      "fontColor": "white",
+      "startDate": "December 2019",
+      "endDate":"December 2019",
+      "category":[
+         "web-dev"
+      ],
+      "tools": [
+         "dot-net",
+         "bootstrap"
+      ],
+      "githubUrl": "",
+      "description": "",
+      "accomplishments": [
+         "Built a web app that allows users to find solutions to homework or practice problems that are hidden behind the paywalls of Chegg.com",
+         "Used .NET Core to create a backend that can scrape Chegg.com in real time and return the solutions to the client."
+      ]
+   },
+   {
+      "name": "Home Server",
+      "imgUrl": "",
+      "fontColor": "white",
+      "size": "normal",
+      "startDate": "December 2019",
+      "endDate":"December 2019",
+      "category":[
+         "web-dev"
+      ],
+      "tools": [
+         "dot-net",
+         "bootstrap"
+      ],
+      "githubUrl": "",
+      "description": "",
+      "accomplishments": [
+         "Built a web app that allows users to find solutions to homework or practice problems that are hidden behind the paywalls of Chegg.com",
+         "Used .NET Core to create a backend that can scrape Chegg.com in real time and return the solutions to the client."
+      ]
+   },
+
+   {
+      "name": "Smart Pi LED",
+      "size": "normal",
+      "fontColor": "white",
+      "startDate": "December 2019",
+      "endDate":"December 2019",
+      "category":[
+         "web-dev"
+      ],
+      "tools": [
+         "dot-net",
+         "bootstrap"
+      ],
+      "githubUrl": "",
+      "description": "",
+      "accomplishments": [
+         "Built a web app that allows users to find solutions to homework or practice problems that are hidden behind the paywalls of Chegg.com",
+         "Used .NET Core to create a backend that can scrape Chegg.com in real time and return the solutions to the client."
+      ]
+   }
+]
+
+
+     
+      
+
+
+
+      
+      
+      
+      
+      
+     
+ 
+

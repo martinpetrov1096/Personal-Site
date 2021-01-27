@@ -98,7 +98,12 @@ export default function App() {
 ///////////////////////////////////////////////////////////////////
 
 const Main = styled.main`
+
+
    background: ${(props) => props.theme.bgColor};
    transition: ${(props) => props.theme.transition};
+   display: flex;
+   flex-flow: column nowrap;
+   align-items: center;
 
 `;

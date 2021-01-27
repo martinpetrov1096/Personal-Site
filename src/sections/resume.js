@@ -30,10 +30,16 @@ export const Resume = ({scroll}) => {
 const Section = styled.section`
    margin-bottom: 300px; // TODO: Remove eventually
    width: 100%;
+   max-width: 2000px;
    display: flex;
    flex-flow: row;
    justify-content: space-around;
    align-items: center;
+
+   /* Hide the section if on the next page */
+   opacity: ${(props) => props.theme.name === 'light' ? '1' : '0'};
+   transition: ${(props) => props.theme.transition};
+
 
    @media screen and (max-width: 1000px) {
       flex-flow: column;
@@ -49,6 +55,9 @@ const Img = styled.img`
    overflow-x: hidden;
    transition: all .5s ease-in-out;
 
+
+
+   filter: ${(props) => props.theme.name === 'dark' ? `brightness(70%)` : `brightness(100%)`};
    /**
     * Unshift the image if we are on the resume section
    */

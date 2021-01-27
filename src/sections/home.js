@@ -25,7 +25,7 @@ const Section = styled.section`
 `;
 
 const Name = styled.h1`
-   font-family: 'Playfair Display', serif;
+   font-family: ${(props) => props.theme.titleFont};
    font-size: 10vw;
    font-weight: 700;
    grid-area: name;
