@@ -11,7 +11,7 @@ export const Projects = () => {
             {
                projects.map((p) => {
                return (
-                 <ProjectCard name={p.name} imgUrl={p.imgUrl} size={p.size} fontColor={p.fontColor} />
+                 <ProjectCard project={p}/>
                );
                })
             }
@@ -26,7 +26,7 @@ export const Projects = () => {
 
 const Section = styled.section`
    width: 100%;
-   max-width: 2000px;
+   max-width: 1200px;
    display: flex;
    flex-flow: column nowrap;
    align-items: center;
@@ -50,14 +50,13 @@ const Title = styled.h2`
 const ProjectsWrapper = styled.div`
    width: 95%;
    display: grid;
-   gap: 2rem;
-   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-   grid-auto-rows: 240px;
+   gap: 1rem;
+   grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
    grid-auto-flow: row dense;
 
    @media screen and (min-width: 500px) {
       grid-template-columns: repeat(auto-fit, minmax(480px, 1fr));
-      grid-auto-rows: 480px;
+      grid-auto-rows: 360px;
 
 
    
