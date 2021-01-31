@@ -6,7 +6,7 @@ import styled, { ThemeProvider } from 'styled-components';
 import Navigation from './components/navbar';
 import { Home } from './sections/home';
 import { Resume } from './sections/resume';
-import { Projects } from './sections/projects';
+import { Portfolio } from './sections/portfolio';
 import sections from './config/sections.json';
 import themes from './config/themes.json';
 
@@ -88,7 +88,7 @@ export default function App() {
          <Main ref={mainRef}>
             <Home/>
             <Resume scroll={scroll}/>
-            <Projects/>
+            <Portfolio/>
          </Main>
       </ThemeProvider>
    );

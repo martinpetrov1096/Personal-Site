@@ -12,15 +12,16 @@ export const ProjectCard = ({project}) => {
          <Content fontColor={project.fontColor}>
             <h3>{project.name}</h3>
             <h5>{project.description}</h5>
-
          </Content>
-         <BG imageUrl={project.imageUrl}/>
+         <BG src={project.imageUrl}/>
       </Project>
    );
 }
 
 const Project = styled.div` 
-   border-radius: 3px;
+   margin: max(1%, 20px) 1%;
+   border-radius: 10px;
+   flex: 480px 0 1;
    transition: ${(props) => props.theme.transform} transform .25s ease-in-out;
    position: relative;
    display: flex;
@@ -30,6 +31,7 @@ const Project = styled.div`
 `;
 
 const BrowserWindow = styled.div`
+   border-radius: 5px 5px 0 0;
    width: 100%;
    height: 30px;
    background-color: ${(props) => props.theme.contentBgColor};
@@ -43,7 +45,7 @@ const BrowserButton = styled.div`
    width: 10px;
    border-radius: 50%;
    margin-right: 5px;
-
+   /* Make the window buttons */
    &:nth-of-type(1) {
       background-color: #28ca41;
    }
@@ -55,30 +57,26 @@ const BrowserButton = styled.div`
    }
 `;
 
-const BG = styled.div`
+const BG = styled.img`
    width: 100%;
-   height: 100%;
-   background: url(${(props) => props.imageUrl});
-   background-position: center;
-   background-size: cover;
+   border-radius: 0 0 5px 5px;
 `;
 
 const Content = styled.div`
-   opacity: 0;
    position: absolute;
-   top: 0;
-   left: 0;
+   border-radius: 5px;
    width: 100%;
    height: 100%;  
-
+   opacity: 0;
    display: flex;
    flex-flow: column nowrap;
    justify-content: center;
    align-items: center;
-
    & > * {
       font-family: 'Varela', sans-serif;
       color: ${(props) => props.fontColor};
+      text-align: center;
+      padding: 3%;
    }
    & > h3 {
       font-size: 28px;
@@ -86,11 +84,9 @@ const Content = styled.div`
    & > h5 {
       font-size: 14px;
    }
-
    transition: backdrop-filter .2s ease-in, opacity .2s ease-in;
    &:hover {
       opacity: 1;
       backdrop-filter: blur(40px);
    }
-
 `;
