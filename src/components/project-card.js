@@ -1,7 +1,15 @@
+import { useMemo } from "react";
 import styled from "styled-components";
 
 export const ProjectCard = ({project}) => {
    
+   const icons = useMemo(() => {
+
+      return project.tools.map((t) => <i key={t} className={`devicon-${t}-plain`}></i>)
+
+
+   }, [project.tools]);
+
    return (
       <Project key={project.name} size={project.size}>
          <BrowserWindow>
@@ -10,8 +18,12 @@ export const ProjectCard = ({project}) => {
             <BrowserButton/>
          </BrowserWindow>
          <Content fontColor={project.fontColor}>
-            <h3>{project.name}</h3>
+            <Title href={project.url} target="_blank" rel="noopener noreferrer">{project.name}</Title>
             <h5>{project.description}</h5>
+            <IconsWrapper>
+               {icons}
+
+            </IconsWrapper>
          </Content>
          <BG src={project.imageUrl}/>
       </Project>
@@ -26,8 +38,7 @@ const Project = styled.div`
    position: relative;
    display: flex;
    flex-flow: column nowrap;
-   justify-content: space-around;
-   align-items: center;
+   justify-content: flex-start;
 `;
 
 const BrowserWindow = styled.div`
@@ -88,5 +99,26 @@ const Content = styled.div`
    &:hover {
       opacity: 1;
       backdrop-filter: blur(40px);
+   }
+`;
+
+const Title = styled.a`
+   font-size: 28px;
+`;
+
+const IconsWrapper = styled.div`
+   width: 100%;
+   display: flex;
+   flex-flow: row wrap;
+   justify-content: center;
+   align-items: center;
+   &::before {
+      content: 'Tools Used ';
+      width: 100%;
+      font-size: 20px;
+   }
+   & > * {
+      font-size: 18px;
+      margin: 3px;
    }
 `;

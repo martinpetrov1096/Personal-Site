@@ -6,12 +6,12 @@ export const Portfolio = () => {
 
    return (
       <Section>
-         <Title>Projects</Title>
+         <Title>Portfolio</Title>
          <ProjectsWrapper>
             {
                projects.map((p) => {
                return (
-                 <ProjectCard project={p}/>
+                 <ProjectCard key={p.name} project={p}/>
                );
                })
             }
