@@ -1,13 +1,19 @@
-import React, { useMemo } from 'react';
+import React, { useCallback, useMemo } from 'react';
 import TextTransition from 'react-text-transition';
 import styled from 'styled-components'
 import sections from '../config/sections.json';
 
 export default function Navigation({scroll, curTab}) {
 
-   const sectionNum = useMemo(() => {
-      return sections.indexOf(curTab);
+   const isActive = useCallback((tab) => {
+      return tab === curTab;
    }, [curTab]);
+
+   const buttons = useMemo(() => {
+      return sections.map((s => (
+         <Button active={isActive(s)}/>
+      )));
+   }, [isActive]);
 
    return (
       <Nav raised={scroll}>
@@ -20,11 +26,7 @@ export default function Navigation({scroll, curTab}) {
             />
          </CurTab>
          <ButtonCont>
-            <Button num={0-sectionNum + 6}></Button>
-            <Button num={1-sectionNum + 6}></Button>
-            <Button num={2-sectionNum + 6}></Button>
-            <Button num={3-sectionNum + 6}></Button>
-            <Button num={4-sectionNum + 6}></Button>
+            {buttons}
          </ButtonCont>
       </Nav>
    );
@@ -102,11 +104,14 @@ const Button = styled.button`
    border: none;
    height: 30px;
    width: 30px;
-   background-size: 1100px 100px;
-   background-color: ${(props) => props.num === 6 ? props.theme.accentColor : props.theme.contentBgColor};
-   background-position: ${(props) => 1200 - (props.num * 100)}px 0;
+   background-color: ${(props) => props.active 
+      ? props.theme.accentColor
+      : props.theme.contentBgColor};
+   box-shadow: ${(props) => props.active
+      ? props.theme.boxShadowInsetAccent
+      : props.theme.boxShadowInset};
+
    transition: ${(props) => props.theme.transition}, background-color .5s ease-in-out, background-image 1s ease-in-out, box-shadow .5s ease-in-out;
-   box-shadow: ${(props) => props.num === 6 ? props.theme.boxShadowInsetAccent : props.theme.boxShadowInset};
    
    @media screen and (max-width: 400px) {
       height: 20px;

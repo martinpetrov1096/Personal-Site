@@ -1,6 +1,5 @@
 import { useMemo } from 'react';
 import styled from 'styled-components';
-
 export const ProjectCard = ({project}) => {
    
    const icons = useMemo(() => {

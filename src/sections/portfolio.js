@@ -2,11 +2,13 @@ import styled from "styled-components";
 import projects from '../config/projects.json';
 import { ProjectCard } from '../components/project-card';
 import { Section, Title } from '../styles/global';
+import Fade from 'react-reveal/Fade';
+
 export const Portfolio = () => {
 
    return (
       <Section visible="dark"> 
-         <Title>Portfolio</Title>
+      <Title>Portfolio</Title>
          <ProjectsWrapper>
             {
                projects.map((p) => {
@@ -16,6 +18,7 @@ export const Portfolio = () => {
                })
             }
          </ProjectsWrapper>
+
       </Section>
    );
 
@@ -25,7 +28,6 @@ export const Portfolio = () => {
 ///////////////////////////////////////////////////////////////////
 
 const ProjectsWrapper = styled.div`
-
    display: flex;
    flex-flow: row wrap;
    justify-content: center;

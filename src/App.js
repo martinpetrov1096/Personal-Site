@@ -69,9 +69,9 @@ export default function App() {
       setCurSection(sections[minIdx]);
    }, [scroll]);
 
-   useEffect(() => { // TODO: Can remove eventually
-      console.log(curSection);
-   }, [curSection]);
+   // useEffect(() => { // TODO: Can remove eventually
+   //    console.log(curSection);
+   // }, [curSection]);
 
 
    const [theme, setTheme] = useState(themes.light);
@@ -79,20 +79,16 @@ export default function App() {
    useEffect(() => {
       switch(curSection) {
          case 'HOME':
-            setTheme(themes.light);
-            break;
          case 'RESUME':
+         case 'ABOUT':
+         case 'CONTACT':
+         default:
             setTheme(themes.light);
             break;
          case 'PROJECTS':
-            setTheme(themes.dark);
-            break;
          case 'SKILLS':
             setTheme(themes.dark);
             break;
-         default: 
-            setTheme(themes.light);
-            console.log('here');
       }
 
 

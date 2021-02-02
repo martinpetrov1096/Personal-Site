@@ -32,6 +32,9 @@ const Wrapper = styled.div`
    transition: ${(props) => props.theme.transition};
 
    > h2 {
-      font-size: 150%;
+      font-size: 24px;
+   }
+   > h6 {
+      font-size: 14px;
    }
 `;

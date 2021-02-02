@@ -9,10 +9,10 @@
       "boxShadowBig": "10px 10px 20px #b3b3b0, -10px -10px 20px #ffffff",
       "boxShadowInset": "inset 5px 5px 10px #b3b3b0, inset -5px -5px 10px #ffffff",
       "boxShadowInsetAccent": "inset 5px 5px 10px #28475e, inset -5px -5px 10px #467da8 !important",
-      "transition": "all 1s ease-in-out",
+      "transition": "all .5s ease-out",
       "titleFont": "'Playfair Display', serif",
       "subtitleFont": "'Varela', sans-serif",
-      "paragraphFont": "'Varela', sans-serif"
+      "paragraphFont": "'Playfair Display', serif"
    },
    "dark": {
       "name": "dark",
@@ -24,7 +24,7 @@
       "boxShadowBig": "0 0 0 #000000",
       "boxShadowInset": "inset 0 0 0 #000000",
       "boxShadowInsetAccent": "inset 0 0 0 #000000",
-      "transition": "all 1s ease-in-out",
+      "transition": "all .5s ease-out",
       "titleFont": "'Varela', sans-serif",
       "subtitleFont": "'Varela', sans-serif",
       "paragraphFont": "'Varela', sans-serif"
