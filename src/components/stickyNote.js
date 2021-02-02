@@ -3,9 +3,9 @@ import styled from 'styled-components';
 export default function StickyNote({tilt, text, subText}) {
 
    return(
-      <Wrapper style={{transform: `rotate(${tilt}deg)`}} >
+      <Wrapper>
          <h2>{text}</h2>
-         <h6 style={{margin: '10px'}}>{subText}</h6>
+         <h6>{subText}</h6>
       </Wrapper>
    );
 }
@@ -14,12 +14,15 @@ export default function StickyNote({tilt, text, subText}) {
 ///////////////////////////////////////////////////////////////////
 
 const Wrapper = styled.div`
+   margin-top: 100px;
    border-radius: 5px;
-   height: min(400px, 80%);
-   width: min(500px, 80%);
+   height: 200px;
+   width: min(300px, 80%);
    background: #FFFFCB;
    font-family: 'Indie Flower', cursive;
    box-shadow: ${(props) => props.theme.boxShadowSmall};
+
+   transform: rotate(10deg);
 
    display: flex;
    flex-flow: column nowrap;

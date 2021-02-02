@@ -1,32 +1,38 @@
 {
-   "familiar": [
-      "bootstrap",
-      "cplusplus",
-      "go",
-      "java",
-      "jquery",
-      "visualstudio"
-   ],
-   "proficient": [
-      "csharp",
-      "dot-net",
-      "express",
-      "docker",
-      "linux",
-      "mysql",
+   "languages": [
+      "javascript",
+      "typescript",
       "python",
-      "vuejs",
-      "ubuntu"
-   ],
-   "experienced": [
       "c",
-      "css3",
-      "git",
+      "csharp",
+      "java",
+      "cplusplus",
+      "go"
+   ],
+   "frontend": [
       "html5",
-      "nginx",
-      "nodejs",
+      "css3",
       "react",
-      "javascript"
+      "vuejs",
+      "jquery",
+      "bootstrap"
+   ],
+   "backend": [
+      "nodejs",
+      "express",
+      "postgresql",
+      "dot-net",
+      "microsoftsqlserver"
+   ], 
+   "dev-ops": [
+      "linux",
+      "visualstudio",
+      "git",
+      "nginx",
+      "docker"
+   ],
+   "etc": [
+
    ]
 }
 

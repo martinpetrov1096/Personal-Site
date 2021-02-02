@@ -7,6 +7,8 @@ import Navigation from './components/navbar';
 import { Home } from './sections/home';
 import { Resume } from './sections/resume';
 import { Portfolio } from './sections/portfolio';
+import { Skills } from './sections/skills';
+import { About } from './sections/about';
 import sections from './config/sections.json';
 import themes from './config/themes.json';
 
@@ -75,11 +77,26 @@ export default function App() {
    const [theme, setTheme] = useState(themes.light);
 
    useEffect(() => {
-      if (curSection === 'PROJECTS') {
-         setTheme(themes.dark);
-      } else {
-         setTheme(themes.light);
+      switch(curSection) {
+         case 'HOME':
+            setTheme(themes.light);
+            break;
+         case 'RESUME':
+            setTheme(themes.light);
+            break;
+         case 'PROJECTS':
+            setTheme(themes.dark);
+            break;
+         case 'SKILLS':
+            setTheme(themes.dark);
+            break;
+         default: 
+            setTheme(themes.light);
+            console.log('here');
       }
+
+
+
    }, [curSection]);
 
    return (
@@ -88,7 +105,9 @@ export default function App() {
          <Main ref={mainRef}>
             <Home/>
             <Resume scroll={scroll}/>
+            <About/>
             <Portfolio/>
+            <Skills/>
          </Main>
       </ThemeProvider>
    );

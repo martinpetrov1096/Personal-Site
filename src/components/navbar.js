@@ -36,15 +36,18 @@ export default function Navigation({scroll, curTab}) {
 const Nav = styled.nav`
    position: fixed;
    z-index: 99;
-   box-shadow: ${(props) => props.raised ? props.theme.boxShadowSmall : `none`};
-
+   /* 
+    * If not at top of page, give a shadow to 
+    * navbar
+   */
+   box-shadow: ${(props) => props.raised 
+      ? props.theme.boxShadowSmall 
+      : `none`};
    padding: 10px;
    width: calc(100% - 20px);
    height: 50px;
-   align-self: center;
    background: ${(props) => props.theme.bgColor};
    transition: ${(props) => props.theme.transition}, box-shadow .2s ease-in-out;
-
 
    display: flex;
    flex-flow: row;
@@ -100,7 +103,6 @@ const Button = styled.button`
    height: 30px;
    width: 30px;
    background-size: 1100px 100px;
-   /* background-image: linear-gradient(90deg, ${(props) => props.theme.contentBgColor} 500px, ${(props) => props.theme.accentColor} 500px 600px, ${(props) => props.theme.contentBgColor} 600px 1100px); */
    background-color: ${(props) => props.num === 6 ? props.theme.accentColor : props.theme.contentBgColor};
    background-position: ${(props) => 1200 - (props.num * 100)}px 0;
    transition: ${(props) => props.theme.transition}, background-color .5s ease-in-out, background-image 1s ease-in-out, box-shadow .5s ease-in-out;
