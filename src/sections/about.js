@@ -5,7 +5,7 @@ import about from '../config/about.json';
 export const About = ({ curTab }) => {
    
    return (
-      <Section visible="light">
+      <Section visible="light" id="about">
          <AboutWrapper>
                <ProfileWrapper>
                   <ProfilePicture src={about['profileUrl']} alt="Martin Petrov's Profile"/>

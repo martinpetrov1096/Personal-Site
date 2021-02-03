@@ -6,7 +6,7 @@ import { Section, Title } from '../styles/global';
 export const Portfolio = ({ curTab }) => {
 
    return (
-      <Section visible="dark"> 
+      <Section visible="dark" id="portfolio"> 
             <Title>Portfolio</Title>
             <ProjectsWrapper>
                {

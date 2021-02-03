@@ -14,7 +14,7 @@ export default function StickyNote({tilt, text, subText}) {
 ///////////////////////////////////////////////////////////////////
 
 const Wrapper = styled.div`
-   margin-top: 100px;
+   margin: 100px 0;
    border-radius: 5px;
    height: 200px;
    width: min(300px, 80%);

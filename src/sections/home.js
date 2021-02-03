@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const Home = () => {
 
    return (
-      <Section >
+      <Section id="home">
          <Name>Mart<span>i</span>n Petrov</Name>
       </Section>
    );
@@ -13,6 +13,7 @@ export const Home = () => {
 ///////////////////////////////////////////////////////////////////
 
 const Section = styled.section`
+   margin-bottom: 200px;
    height: 80vh;
    width: 100%;
    display: grid;

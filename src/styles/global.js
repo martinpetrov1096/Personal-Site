@@ -9,6 +9,7 @@ import styled from 'styled-components';
  */
 export const Section = styled.section`
    margin-bottom: 200px;
+   padding-top: 80px;
    width: 95%;
    max-width: 1800px;
    color: ${(props) => props.theme.color};

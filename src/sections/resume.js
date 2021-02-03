@@ -10,16 +10,13 @@ import { Section } from '../styles/global';
 export const Resume = ({scroll}) => {
 
    return(
-      <Section visible="light">
-         <Img src='resume.svg' alt="Martin Petrov's Resume" unshift={scroll}/>
-
+      <Section visible="light" id="resume">
+         <Img src='resume/resume.svg' alt="Martin Petrov's Resume" unshift={scroll}/>
             <StickyNote 
                tilt="10"
                text="Busy? Here's my resume"
-               subText="(TODO: Add download button)"
             ></StickyNote>
-
-
+            <DownloadButton href="resume/resume.pdf" download>Download</DownloadButton>
       </Section>
    );
 }
@@ -53,13 +50,14 @@ const Img = styled.img`
    }
 `;
 
-const StickyNoteWrapper = styled.div`
-   flex-shrink: 2;
-   flex-basis: 400px;
-   height: 300px;
+const DownloadButton = styled.a`
+   box-shadow: ${(props) => props.theme.boxShadowInsetAccent};
+   border-radius: 5px;
+   padding: 20px;
+   background-color: ${(props) => props.theme.accentColor};
+   color: white;
+   font-family: ${(props) => props.theme.subtitleFont};
+   font-size: 24px;
 
-   @media screen and (max-width: 1000px) {
-      padding-top: 100px;
-      flex-basis: 200px;
-   }
+
 `;

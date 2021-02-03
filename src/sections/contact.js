@@ -5,7 +5,7 @@ import { ContactInfo } from '../components/contact-info';
 export const Contact = () => {
 
    return (
-      <FullHeightSection visible="light">
+      <FullHeightSection visible="light" id="contact">
          <Title>Contact</Title>
          <Subtitle>Shoot me an email, or give me a call. </Subtitle>
          <ContactInfo/>

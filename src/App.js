@@ -3,7 +3,7 @@ import './styles/root.css';
 
 import React, { useEffect, useState, useRef } from 'react';
 import styled, { ThemeProvider } from 'styled-components';
-import Navigation from './components/navbar';
+import { NavBar } from './components/navbar';
 import { Home } from './sections/home';
 import { Resume } from './sections/resume';
 import { Portfolio } from './sections/portfolio';
@@ -63,20 +63,21 @@ export default function App() {
        */
       const sectionPos = Array.from(mainRef.current.childNodes).map((x) => x.getBoundingClientRect().bottom);
 
-
+      /**
+       * If the current section is 100 pixels
+       * below, switch the nav curTab
+       */
       for (const [i,s] of sectionPos.entries()) {
-     //    console.log('i: ' + i +  ' Scroll: ' + scroll , ' s: ' + s);
-         if (s > 400 && scroll > s) {
+         if (s > 200 ) {
             setCurSection(sections[i]);
             break;
          }
       }
-
    }, [scroll]);
 
-   // useEffect(() => { // TODO: Can remove eventually
-   //    console.log(curSection);
-   // }, [curSection]);
+   useEffect(() => { // TODO: Can remove eventually
+      console.log(curSection);
+   }, [curSection]);
 
 
    const [theme, setTheme] = useState(themes.light);
@@ -99,7 +100,7 @@ export default function App() {
 
    return (
       <ThemeProvider theme={theme}>
-         <Navigation curTab={curSection} scroll={scroll}/>
+         <NavBar curTab={curSection} scroll={scroll}/>
          <Main ref={mainRef}>
             <Home/>
             <Resume scroll={scroll}/>
@@ -116,7 +117,6 @@ export default function App() {
 ///////////////////////////////////////////////////////////////////
 
 const Main = styled.main`
-
 
    background: ${(props) => props.theme.bgColor};
    transition: ${(props) => props.theme.transition};

@@ -3,7 +3,7 @@ import TextTransition from 'react-text-transition';
 import styled from 'styled-components'
 import sections from '../config/sections.json';
 
-export default function Navigation({scroll, curTab}) {
+export const NavBar = ({scroll, curTab}) => {
 
    const isActive = useCallback((tab) => {
       return tab === curTab;
@@ -11,7 +11,7 @@ export default function Navigation({scroll, curTab}) {
 
    const buttons = useMemo(() => {
       return sections.map((s => (
-         <Button key={s} active={isActive(s)} />
+         <Button href={'#' + s.toLowerCase()} key={s} active={isActive(s)} />
       )));
    }, [isActive]);
 
@@ -99,7 +99,7 @@ const ButtonCont = styled.div`
 
 `;
 
-const Button = styled.button`
+const Button = styled.a`
    border-radius: 100%;
    border: none;
    height: 30px;
