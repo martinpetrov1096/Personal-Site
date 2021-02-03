@@ -1,5 +1,7 @@
 import styled from 'styled-components';
 
+
+
 /**
  * @visible Takes a parameter that says 
  * what the theme is. Is used to know if
@@ -14,6 +16,8 @@ export const Section = styled.section`
    /* Hide the section if on the next page */
    opacity: ${(props) => props.theme.name === props.visible ? '1' : '0'};
    transition: ${(props) => props.theme.transition};
+   transform: ${(props) => props.theme.name === props.visible ? 'translateX(0)' : 'translateX(150px)'};
+
    display: flex;
    flex-flow: column nowrap;
    align-items: center;
@@ -21,7 +25,7 @@ export const Section = styled.section`
 
 export const Title = styled.h1`
    font-family: ${(props) => props.theme.titleFont};
-   font-weight: 700;
+   font-weight: 400;
    font-size: min(20vw, 150px);
 `;
 
@@ -33,3 +37,5 @@ export const Subtitle = styled.h2`
    font-size: 20px;
    color: ${(props) => props.theme.color};
 `;
+
+

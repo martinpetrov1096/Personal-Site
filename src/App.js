@@ -11,6 +11,7 @@ import { Skills } from './sections/skills';
 import { About } from './sections/about';
 import sections from './config/sections.json';
 import themes from './config/themes.json';
+import { Contact } from './sections/contact';
 
 
 
@@ -50,28 +51,32 @@ export default function App() {
       window.addEventListener('scroll', listenToScroll);
    }, []);
 
+
+
+
+
    useEffect(() => {
       /**
        * Grab all of the children to the main element (should be
        * all section elements). Then, calc the absolute value of 
        * the top of each div to see what section we're closest to
        */
-      const sectionPos = Array.from(mainRef.current.childNodes).map((x) => Math.abs(x.getBoundingClientRect().top));
-      let curMin = sectionPos[0];
-      let minIdx = 0;
-      sectionPos.forEach((s,i) => {
-         if (s < curMin) {
-            curMin = s
-            minIdx = i;
-         }
-      });
+      const sectionPos = Array.from(mainRef.current.childNodes).map((x) => x.getBoundingClientRect().bottom);
 
-      setCurSection(sections[minIdx]);
+
+      for (const [i,s] of sectionPos.entries()) {
+     //    console.log('i: ' + i +  ' Scroll: ' + scroll , ' s: ' + s);
+         if (s > 400 && scroll > s) {
+            setCurSection(sections[i]);
+            break;
+         }
+      }
+
    }, [scroll]);
 
-   // useEffect(() => { // TODO: Can remove eventually
-   //    console.log(curSection);
-   // }, [curSection]);
+   useEffect(() => { // TODO: Can remove eventually
+      console.log(curSection);
+   }, [curSection]);
 
 
    const [theme, setTheme] = useState(themes.light);
@@ -85,14 +90,11 @@ export default function App() {
          default:
             setTheme(themes.light);
             break;
-         case 'PROJECTS':
+         case 'PORTFOLIO':
          case 'SKILLS':
             setTheme(themes.dark);
             break;
       }
-
-
-
    }, [curSection]);
 
    return (
@@ -101,9 +103,10 @@ export default function App() {
          <Main ref={mainRef}>
             <Home/>
             <Resume scroll={scroll}/>
-            <About/>
-            <Portfolio/>
+            <About curTab={curSection}/>
+            <Portfolio curTab={curSection}/>
             <Skills/>
+            <Contact/>
          </Main>
       </ThemeProvider>
    );

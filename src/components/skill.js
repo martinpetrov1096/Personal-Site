@@ -5,8 +5,8 @@ export const Skill = ({title, skills}) => {
 
    const icons = useMemo(() => {
       return skills.map((s) => (
-         <SkillIcon>
-            <i key={s} className={`devicon-${s}-plain colored`}/>
+         <SkillIcon key={s}>
+            <i  className={`devicon-${s}-plain colored`}/>
             <h6>{s}</h6>
          </SkillIcon>
       ));

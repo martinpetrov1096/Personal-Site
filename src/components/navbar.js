@@ -11,7 +11,7 @@ export default function Navigation({scroll, curTab}) {
 
    const buttons = useMemo(() => {
       return sections.map((s => (
-         <Button active={isActive(s)}/>
+         <Button key={s} active={isActive(s)} />
       )));
    }, [isActive]);
 
