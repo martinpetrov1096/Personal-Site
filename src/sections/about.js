@@ -8,7 +8,7 @@ export const About = ({ curTab }) => {
       <Section visible="light">
          <AboutWrapper>
                <ProfileWrapper>
-                  <ProfilePicture src={about['profileUrl']}/>
+                  <ProfilePicture src={about['profileUrl']} alt="Martin Petrov's Profile"/>
                   <ProfileLinkWrapper>
                      <ProfileLink href={about.linkedInUrl} target="_blank" rel="noopener noreferrer">
                         <i className="devicon-linkedin-plain" />

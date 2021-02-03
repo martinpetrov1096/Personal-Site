@@ -74,9 +74,9 @@ export default function App() {
 
    }, [scroll]);
 
-   useEffect(() => { // TODO: Can remove eventually
-      console.log(curSection);
-   }, [curSection]);
+   // useEffect(() => { // TODO: Can remove eventually
+   //    console.log(curSection);
+   // }, [curSection]);
 
 
    const [theme, setTheme] = useState(themes.light);

@@ -1,20 +1,21 @@
 import styled from 'styled-components';
-import { Section, Title } from '../styles/global';
+import { Section, Title, Subtitle } from '../styles/global';
 import { ContactInfo } from '../components/contact-info';
-import { ContactLetter } from '../components/contact-letter';
+// import { ContactLetter } from '../components/contact-letter';
 export const Contact = () => {
 
    return (
       <FullHeightSection visible="light">
          <Title>Contact</Title>
+         <Subtitle>Shoot me an email, or give me a call. </Subtitle>
          <ContactInfo/>
          {/* <ContactLetter/> */}
       </FullHeightSection>
    );
-
 }
-
-
+///////////////////////////////////////////////////////////////////
+///////////////////////////// CSS /////////////////////////////////
+///////////////////////////////////////////////////////////////////
 
 const FullHeightSection = styled(Section)`
    /**

@@ -1,10 +1,7 @@
-import styled from "styled-components";
-
 import { Skill } from '../components/skill';
-import { Section, Subtitle, Title } from '../styles/global'; 
+import { Section, Title } from '../styles/global'; 
 import skills from '../config/skills.json';
 export const Skills = () => {
-
 
    return (
       <Section visible="dark">

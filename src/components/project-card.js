@@ -3,10 +3,7 @@ import styled from 'styled-components';
 export const ProjectCard = ({project}) => {
    
    const icons = useMemo(() => {
-
       return project.tools.map((t) => <i key={t} className={`devicon-${t}-plain`}></i>)
-
-
    }, [project.tools]);
 
    return (
@@ -24,7 +21,7 @@ export const ProjectCard = ({project}) => {
 
             </IconsWrapper>
          </Content>
-         <BG src={project.imageUrl}/>
+         <BG src={project.imageUrl} alt={project.name}/>
       </Project>
    );
 }

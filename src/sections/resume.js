@@ -11,7 +11,7 @@ export const Resume = ({scroll}) => {
 
    return(
       <Section visible="light">
-         <Img src='resume.svg' unshift={scroll}/>
+         <Img src='resume.svg' alt="Martin Petrov's Resume" unshift={scroll}/>
 
             <StickyNote 
                tilt="10"
