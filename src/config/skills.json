@@ -1,0 +1,38 @@
+{
+   "languages": [
+      "javascript",
+      "typescript",
+      "python",
+      "c",
+      "csharp",
+      "java",
+      "cplusplus",
+      "go"
+   ],
+   "frontend": [
+      "html5",
+      "css3",
+      "react",
+      "vuejs",
+      "jquery",
+      "bootstrap"
+   ],
+   "backend": [
+      "nodejs",
+      "express",
+      "postgresql",
+      "dot-net",
+      "microsoftsqlserver"
+   ], 
+   "dev-ops": [
+      "linux",
+      "visualstudio",
+      "git",
+      "nginx",
+      "docker"
+   ],
+   "etc": [
+
+   ]
+}
+

@@ -1,0 +1,15 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@700&family=Varela&display=swap');
+@import url('https://cdn.jsdelivr.net/gh/devicons/devicon@v2.9.0/devicon.min.css');
+
+/*
+ * Hide overflow so that the css transitions when
+ * changing themes don't create a scrollbar
+ */
+body, html {
+   overflow-x: hidden;
+}
