@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { Section, Title, Subtitle } from '../styles/global';
 import { ContactInfo } from '../components/contact-info';
-// import { ContactLetter } from '../components/contact-letter';
+import { ContactLetter } from '../components/contact-letter';
 export const Contact = () => {
 
    return (
@@ -9,7 +9,7 @@ export const Contact = () => {
          <Title>Contact</Title>
          <Subtitle>Shoot me an email, or give me a call. </Subtitle>
          <ContactInfo/>
-         {/* <ContactLetter/> */}
+         <ContactLetter/>
       </FullHeightSection>
    );
 }

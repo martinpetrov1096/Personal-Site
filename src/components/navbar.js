@@ -54,7 +54,7 @@ const Nav = styled.nav`
    display: flex;
    flex-flow: row;
    align-items: center;
-   justify-content: center;
+   justify-content: flex-start;
 
    @media screen and (max-width: 400px) {
       justify-content: space-around;
