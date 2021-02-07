@@ -31,12 +31,22 @@ export const Title = styled.h1`
 `;
 
 export const Subtitle = styled.h2`
-   margin-bottom: 30px;
+   margin: 30px 0;
    font-family: ${(props) => props.theme.subtitleFont};
 
    font-weight: 500;
-   font-size: 20px;
+   font-size: 22px;
    color: ${(props) => props.theme.color};
+   transition: ${(props) => props.theme.transition}
 `;
 
-
+export const Button = styled.button`
+   box-shadow: ${(props) => props.theme.boxShadowInsetAccent};
+   border: none;
+   border-radius: 5px;
+   padding: 10px;
+   background-color: ${(props) => props.theme.accentColor};
+   color: white;
+   font-family: ${(props) => props.theme.subtitleFont};
+   font-size: 24px;
+`;

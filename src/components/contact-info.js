@@ -26,6 +26,6 @@ const ContactWrapper = styled.div`
 
 const Contact = styled.h4`
    padding: 30px;
-   font-size: 20px;
+   font-size: 18px;
    font-family: ${(props) => props.theme.subtitleFont};
 `;

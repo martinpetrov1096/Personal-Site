@@ -1,15 +1,16 @@
 import styled from 'styled-components';
 import { Section, Title, Subtitle } from '../styles/global';
 import { ContactInfo } from '../components/contact-info';
-import { ContactLetter } from '../components/contact-letter';
+import { ContactForm } from '../components/contact-form';
 export const Contact = () => {
 
    return (
       <FullHeightSection visible="light" id="contact">
          <Title>Contact</Title>
-         <Subtitle>Shoot me an email, or give me a call. </Subtitle>
+         <Subtitle>Shoot me an email, or give me a call.</Subtitle>
          <ContactInfo/>
-         <ContactLetter/>
+         <Subtitle>Or, fill out the form below</Subtitle>
+         <ContactForm/>
       </FullHeightSection>
    );
 }
