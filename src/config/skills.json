@@ -21,6 +21,7 @@
       "nodejs",
       "express",
       "postgresql",
+      "redis",
       "dot-net",
       "microsoftsqlserver"
    ], 

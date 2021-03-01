@@ -4,12 +4,22 @@ import styled from 'styled-components';
 export const Skill = ({title, skills}) => {
 
    const icons = useMemo(() => {
-      return skills.map((s) => (
-         <SkillIcon key={s}>
-            <i  className={`devicon-${s}-plain colored`}/>
-            <h6>{s}</h6>
-         </SkillIcon>
-      ));
+      return skills.map((s) => {
+         /* Since the name for express is different */
+         if (s === 'express') {
+            return (
+               <SkillIcon key={s}>
+                  <i className={`devicon-express-original colored`}/>
+                  <h6>{s}</h6>
+               </SkillIcon>
+               );
+         }
+         return(
+            <SkillIcon key={s}>
+               <i className={`devicon-${s}-plain colored`}/>
+               <h6>{s}</h6>
+            </SkillIcon>
+      )});
    }, [skills]);
 
    return (

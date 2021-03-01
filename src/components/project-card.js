@@ -6,6 +6,11 @@ export const ProjectCard = ({project}) => {
       return project.tools.map((t) => <i key={t} className={`devicon-${t}-plain`}></i>)
    }, [project.tools]);
 
+   const github = useMemo(() => {
+      return <i className='devicon-github-plain'></i>
+   }, []);
+
+
    return (
       <Project key={project.name} size={project.size}>
          <BrowserWindow>
@@ -15,10 +20,12 @@ export const ProjectCard = ({project}) => {
          </BrowserWindow>
          <Content fontColor={project.fontColor}>
             <Title href={project.url} target="_blank" rel="noopener noreferrer">{project.name}</Title>
+            <Github href={project.githubUrl} target="_blank" rel="noopener noreferrer">
+               {github}
+            </Github>
             <h5>{project.description}</h5>
             <IconsWrapper>
                {icons}
-
             </IconsWrapper>
          </Content>
          <BG src={project.imageUrl} alt={project.name}/>
@@ -101,6 +108,19 @@ const Content = styled.div`
 const Title = styled.a`
    font-size: 28px;
 `;
+
+const Github = styled.a`
+   text-decoration: none;
+   & > i {
+      font-size: 40px; 
+      text-align: center;
+      transition: color .2s ease-in-out;
+      &:hover {
+         color: ${(props) => props.theme.accentColor};
+      }
+   }
+`;
+
 
 const IconsWrapper = styled.div`
    width: 100%;

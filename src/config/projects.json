@@ -149,7 +149,7 @@
          "docker",
          "ubuntu"
       ],
-      "githubUrl": "",
+      "githubUrl": "https://github.com/martinpetrov1096/ServerConfig",
       "description": "A personal server running Ubuntu 20.20 LTS that I use to store media and host my personal projects",
       "accomplishments": [
       ]
