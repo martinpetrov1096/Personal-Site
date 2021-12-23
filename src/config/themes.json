@@ -1,0 +1,32 @@
+{
+    "light": {
+       "name": "light",
+       "bgColor": "#FFFFF9",
+       "contentBgColor": "#FFFFF9",
+       "color": "#000000",
+       "accentColor": "#376283",
+       "boxShadowSmall": "5px 5px 10px #b3b3b0, -5px -5px 10px #ffffff",
+       "boxShadowBig": "10px 10px 20px #b3b3b0, -10px -10px 20px #ffffff",
+       "boxShadowInset": "inset 2px 2px 4px #b3b3b0, inset -2px -2px 4px #ffffff",
+       "boxShadowInsetAccent": "inset 2px 2px 4px #28475e, inset -2px -2px 4px #467da8 !important",
+       "transition": "all .5s ease-out",
+       "titleFont": "'Playfair Display', serif",
+       "subtitleFont": "'Playfair Display', serif",
+       "paragraphFont": "'Playfair Display', serif"
+    },
+    "dark": {
+       "name": "dark",
+       "bgColor": "#000000",
+       "contentBgColor": "#131313",
+       "color": "#FFFFFF",
+       "accentColor": "#3f51b5",
+       "boxShadowSmall": "1px 1px 3px #131313",
+       "boxShadowBig": "0 0 0 #000000",
+       "boxShadowInset": "inset 0 0 0 #000000",
+       "boxShadowInsetAccent": "inset 0 0 0 #000000",
+       "transition": "all .5s ease-out",
+       "titleFont": "'Varela', sans-serif",
+       "subtitleFont": "'Varela', sans-serif",
+       "paragraphFont": "'Varela', sans-serif"
+    }
+ }
