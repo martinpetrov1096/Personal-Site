@@ -11,23 +11,23 @@ import Contact from './sections/contact';
 const sections = [
     {
         'name': 'HOME', 
-        'elem': <Home/>
+        'elem': Home
     },
     {
         'name': 'RESUME', 
-        'elem': <Resume/>
+        'elem': Resume
     },
     {
         'name': 'TIMELINE', 
-        'elem': <Timeline/>
+        'elem': Timeline
     },
     {
         'name': 'SKILLS', 
-        'elem': <Skills/>
+        'elem': Skills
     },
     {
         'name': 'CONTACT', 
-        'elem': <Contact/>
+        'elem': Contact
     }
 ]
 

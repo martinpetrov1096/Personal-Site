@@ -1,56 +1,37 @@
 import React, { useContext, useEffect, useState} from 'react';
-import TextTransition from "react-text-transition";
 import { ScrollContext } from '../App';
 import { SectionContext } from '../App';
 import styled from 'styled-components'
 
-import styles from '../styles/components/navbar.module.css';
-import global from '../styles/global.module.css';
 
-export default function Navigation({pagePos}) {
-   let {scroll} = useContext(ScrollContext);
+export default function Navigation() {
    let  sections = useContext(SectionContext);
-
-
+   let scroll = useContext(ScrollContext);
    let [curTab, setCurTab] = useState(0);
-
-   //let [mobileTab, setMobileTab] = useState('');
-   let classes = [
-      styles.shift1,
-      styles.shift2,
-      styles.shift3,
-      styles.shift4,
-      styles.shift5,
-      styles.shift6,
-      styles.shift7,
-      styles.shift8,
-      styles.shift9,
-      styles.shift10,
-      styles.shift11,
-   ].reverse();
-
-
-   const getButtonPos = (btnNum) => {
-      /* Makes sure there's no overflow */
-      if (btnNum - curTab + 5 > 11 || btnNum - curTab +5 < 0) {
-         return classes[0];
-      }
-      return classes[btnNum - curTab + 5];
-   };
+   let [transition, setTransition] = useState(false);
 
    useEffect(() => {
       if (curTab !== sections.findIndex(s => s.active)) {
-         console.log('here')
          setCurTab(sections.findIndex(s => s.active));
+         setTransition(true);
+         setTimeout(() => setTransition(false), 475);
       }
-
    }, [sections]);
 
-   return (
-      <Nav>
+   const getBtnStyles = (idx, transition) => {
+      return {
+         'backgroundPositionX': `${-100 * ( idx - curTab - 1 + (sections.length))}px`,
+         'color': `${curTab === idx ? 'white' : 'black'}`,
+         'animation': `${curTab === idx ? 'shadowComing 1s 0' : 'shadowLeaving 1s 0s'}`,
+         'boxShadow': transition && curTab === idx ? 'inset 3px 3px 6px #b3b3b0, inset -3px -3px 6px #ffffff' : 'none',
+      };
+   };
 
+
+   return (
+      <Nav scrolled={scroll.amount > .1}>
          <ButtonCont>
-            { sections.map((s, i) => <Button className={getButtonPos(i)}>{s.name}</Button>) }
+            { sections.map((s, i) => <Button key={s.name + '_navbar'} numSections={sections.length} style={getBtnStyles(i, transition) } href={'#' + s.name.toLowerCase()}>{s.name}</Button>) }
          </ButtonCont>
       </Nav>
    )
@@ -61,86 +42,78 @@ export default function Navigation({pagePos}) {
 
 const Nav = styled.nav`
    position: fixed;
-   z-index: 99;
-   /* 
-    * If not at top of page, give a shadow to 
-    * navbar
-   */
-   box-shadow: ${(props) => true
-      ? props.theme.boxShadowSmall 
-      : `none`};
-   padding: 10px;
+   z-index: 5;
+   box-shadow: ${(props) => props.scrolled ? props.theme.boxShadowSmall : 'none'};
+   padding: ${props => props.scrolled ? '10px' : '50px' } 10px 10px 10px;
    width: calc(100% - 20px);
-   height: 50px;
+   height: 45px;
    background: ${(props) => props.theme.bgColor};
-   transition: ${(props) => props.theme.transition}, box-shadow .2s ease-in-out;
+   transition: padding .3s ease-in-out, box-shadow .2s ease-out;
    display: flex;
    flex-flow: row;
    align-items: center;
    justify-content: flex-start;
-   @media screen and (max-width: 400px) {
+   /* @media screen and (max-width: 600px) {
       justify-content: space-around;
+   } */
+   @media screen and (max-width: 600px) {
+      padding: 10px;
+      height: 25px;
    }
+
 `;
 
-const CurTab = styled.h3`
-   border-radius: 5px;
-   padding: 10px;
-   min-width: 40px;
-   flex-basis: 100px;
-   flex-shrink: 2;
-   flex-grow: 0;
-   background: ${(props) => props.theme.contentBgColor};
-   color: ${(props) => props.theme.accentColor};
-   font-family: 'Oswald', sans-serif;
-   font-size: 22px;
-   font-weight: 400;
-   text-align: center;
-   box-shadow: ${(props) => props.theme.boxShadowInset};
-   transition: ${(props) => props.theme.transition};
-   @media screen and (max-width: 400px) {
-      border-radius: 3px;
-      font-size: 16px;
-      flex-basis: 60px;
-      padding: 10px;
-   }
-`;
 const ButtonCont = styled.div`
    flex-basis: 300px;
    flex-grow: 1;
-    max-width: 600px;
+   max-width: 500px;
+   padding-left: 10px;
    display: flex;
    flex-flow: row nowrap;
    justify-content: space-around;
-   @media screen and (max-width: 400px) {
-      flex-basis: 150px;
+   @media screen and (max-width: 600px) {
+      padding: 0;
    }
 `;
 
 const Button = styled.a`
+   border-radius: 5px;
+   border: none;
+   padding: 12px;
+   
+   width: 55px;
+   
+   text-decoration: none;
+   font-family: 'Oswald', sans-serif;
+   font-size: 16px;
+   font-weight: 400;
+   
+   
+   background-size: ${props => props.numSections * 100}px 50px;
+   background-repeat: no-repeat;
+   background-image: linear-gradient(to right, ${props => props.theme.bgColor} ${props => (props.numSections - 1) * 100}px,
+                                               ${props => props.theme.accentColor} ${props => (props.numSections - 1) * 100}px,
+                                               ${props => props.theme.accentColor} ${props => props.numSections * 100}px);
+   transition: background-position-x .3s ease-in-out .3s,
+               color .3s ease-in-out .3s,
+               box-shadow .5s ease-in-out 0s;
 
-    border-radius: 5px;
-    border: none;
-    padding: 10px;
-    height: 30px;
-    width: 70px;
-    background-size: 1100px 100px;
+   &:focus {
+      outline: none;
+   }
+   &:hover {
+      text-decoration: underline;  
+   }
+   display: flex;
+   flex-flow: row;
+   justify-content: center;
+   align-items: center;
 
-    color: #376283;
-    background-image: linear-gradient(to right, white 100px 500px, #376283 500px 600px, white 600px 1100px);
-    font-family: 'Oswald', sans-serif;
-    font-size: 22px;
-    font-weight: 400;
+   @media screen and (max-width: 600px) {
+      border-radius: 3px;
+      width: 40px;
+      padding: 7px;
+      font-size: 13px;
+   }
 
-    
-    
-    transition: background-position-x .35s ease-in-out .35s;
-    &:focus {
-        outline: none;
-    } 
-
-    display: flex;
-    flex-flow: row;
-    justify-content: center;
-    align-items: center;
  `;

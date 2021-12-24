@@ -1,8 +1,6 @@
 import React, { useCallback, useMemo, useState } from 'react';
 import Navigation from './components/navbar';
-import global from './styles/global.module.css';
 import './styles/root.css';
-import styles from './styles/app.module.css';
 import themes from './config/themes.json';
 import styled, { ThemeProvider } from 'styled-components';
 /**
@@ -14,10 +12,14 @@ export const SectionContext = React.createContext();
 
 
 function App({sectionProps}) {
-   const [scroll, setScroll] = useState(0);
+   const [scroll, setScroll] = useState({amount: 0, recent: false});
+   //const [recentScroll, setRecentScroll] = useState(false);
+
    
-   
-   const onScroll = useCallback(e => void setScroll({ scroll: e.target.scrollTop / (window.innerHeight) }), [])
+   const onScroll = (e => {            
+      setScroll({ amount: e.target.scrollTop / (window.innerHeight), recent: true});
+      // setTimeout(() => setScroll({...scroll, recent: false}), 1000);
+    });
    
    const section = useMemo(() => {
       const mySections = JSON.parse(JSON.stringify(sectionProps))
@@ -34,18 +36,43 @@ function App({sectionProps}) {
    });
 
    return (
-      <ScrollContext.Provider value={scroll}>
-         <SectionContext.Provider value={section}>
-            <div className={styles.mainCont}>
-               <Navigation pagePos={[0,1,2,3,4]}></Navigation>
-               <main className={styles.contentCont} onScroll={onScroll}>  
-                  { sectionProps.map(s => s.elem) }
-               </main>
-            </div>
-         </SectionContext.Provider>
-
-      </ScrollContext.Provider>
+      <ThemeProvider theme={themes}>
+         <ScrollContext.Provider value={scroll}>
+            <SectionContext.Provider value={section}>
+               <Main>
+                  <Navigation/>
+                  <Content onScroll={onScroll}>  
+                     { sectionProps.map(s => <s.elem key={s.name} id={s.name.toLowerCase()}/>) }
+                  </Content>
+               </Main>
+            </SectionContext.Provider>
+         </ScrollContext.Provider>
+      </ThemeProvider>
    );
 }
 
 export default App;
+
+
+///////////////////////////////////////////////////////////////////
+///////////////////////////// CSS /////////////////////////////////
+///////////////////////////////////////////////////////////////////
+
+const Main = styled.main`
+   display: flex;
+   flex-flow: row-reverse nowrap;
+   height: 100% !important;
+   width: 100% !important;
+   background-color: ${props => props.theme.bgColor};
+`
+const Content = styled.div`
+   height: 100% !important;
+   display: flex;
+   flex-flow: column;
+   position: relative;
+   flex-grow: 1;
+   overflow: hidden;
+   overflow-y: scroll;
+   -ms-overflow-style: none;  /* IE and Edge */
+   scrollbar-width: none;  /* Firefox */
+`;
