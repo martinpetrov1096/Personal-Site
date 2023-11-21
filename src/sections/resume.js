@@ -1,63 +1,63 @@
-import React, { useContext, useEffect } from 'react';
-import {ScrollContext} from '../App';
-import { animated } from 'react-spring';
-import {useSpring } from 'react-spring';
-import { Parallax, ParallaxLayer } from '@react-spring/parallax';
-import resume from '../resume.svg';
-import styles from '../styles/resume.module.css';
-import global from '../styles/global.module.css';
+import React from 'react';
+import styled from 'styled-components';
+import StickyNote from '../components/stickyNote';
+//import { Section } from '../styles/global';
+/**
+ * 
+ * @param {number} props.scroll The amount scroll
+ * from the top of the page, in pixels
+ */
+export default  ({scroll}) => {
 
-export default function Resume({id}) {
-
-   let pos = useContext(ScrollContext);
-   const alignCenter = { display: 'flex', alignItems: 'center' }
-
-   const [{ scroll }, api] = useSpring( () => ({ scroll: 0 }));
-   useEffect(() => {
- //     api.start({ scroll: 0});
-      console.log(pos.amount)
-    console.log(api);
-   })
-
-       
-   const transform = scroll.interpolate({
-      range: [0,1],
-      output: [0, 100],
-      extrapolate: 'clamp' 
-   })
-   .interpolate(s => {
-       console.log(s)
-      return `translate3d(${s * (30/100) - 30}vw,${s * (40/100)-40}vh,0) rotate(${(s * 32/100)-32}deg)`;      
-   });
    return(
-      <section className={styles.container} id={id}>
-         <animated.img src={resume} style={{transform }} className={`${styles.img} ${global.card10}`}></animated.img>
-
-         {/* <Parallax pages={4}>
-            <ParallaxLayer offset={0} speed={0.5} style={{ ...alignCenter, justifyContent: 'center' }}>
-            <p className={styles.scrollText}>Scroll down</p>
-         </ParallaxLayer>
-
-         <ParallaxLayer sticky={{ start: 1, end: 3 }} style={{ ...alignCenter, justifyContent: 'flex-start' }}>
-            <div className={`${styles.card} ${styles.sticky}`}>
-               <p>I'm a sticky layer</p>
-            </div>
-         </ParallaxLayer>
-
-         <ParallaxLayer offset={1.5} speed={1.5} style={{ ...alignCenter, justifyContent: 'flex-end' }}>
-            <div className={`${styles.card} ${styles.parallax} ${styles.purple}`}>
-               <p>I'm not</p>
-            </div>
-         </ParallaxLayer>
-
-         <ParallaxLayer offset={2.5} speed={1.5} style={{ ...alignCenter, justifyContent: 'flex-end' }}>
-            <div className={`${styles.card} ${styles.parallax} ${styles.blue}`}>
-               <p>Neither am I</p>
-            </div>
-         </ParallaxLayer>
-
-         </Parallax> */}
-
-      </section>
-   )
+      <div visible="light" id="resume">
+         <Img src='resume/resume.svg' alt="Martin Petrov's Resume" unshift={scroll}/>
+            <StickyNote 
+               tilt="10"
+               text="Busy? Here's my resume"
+            ></StickyNote>
+            <DownloadButton href="resume/resume.pdf" download>Download</DownloadButton>
+      </div>
+   );
 }
+///////////////////////////////////////////////////////////////////
+///////////////////////////// CSS /////////////////////////////////
+///////////////////////////////////////////////////////////////////
+
+const Img = styled.img`
+   position: relative;
+   width: 40vw;
+   height: auto;
+   z-index: 1;
+   box-shadow: ${(props) => props.unshift 
+      ? props.theme.boxShadowSmall 
+      : props.theme.boxShadowBig};
+   overflow-x: hidden;
+   transition: all .5s ease-in-out;
+
+   filter: ${(props) => props.theme.name === 'dark' 
+      ? `brightness(70%)` 
+      : `brightness(100%)`};
+   /**
+    * Unshift the image if we are on the resume section
+   */
+   transform: ${(props) => props.unshift 
+      ? `translate3d(0,0,0) rotate(0) scale(1)` 
+      : `translate3d(-20vw, 0vh, 0) rotate(-22deg) scale(1.2)`};
+
+   @media screen and (max-width: 1000px) {
+      width: 80vw;
+   }
+`;
+
+const DownloadButton = styled.a`
+   box-shadow: ${(props) => props.theme.boxShadowInsetAccent};
+   border-radius: 5px;
+   padding: 20px;
+   background-color: ${(props) => props.theme.accentColor};
+   color: white;
+   font-family: ${(props) => props.theme.subtitleFont};
+   font-size: 24px;
+
+
+`;

@@ -13,12 +13,11 @@ export const SectionContext = React.createContext();
 
 function App({sectionProps}) {
    const [scroll, setScroll] = useState({amount: 0, recent: false});
-   //const [recentScroll, setRecentScroll] = useState(false);
 
    
-   const onScroll = (e => {            
+   const onScroll = (e => {
       setScroll({ amount: e.target.scrollTop / (window.innerHeight), recent: true});
-      // setTimeout(() => setScroll({...scroll, recent: false}), 1000);
+      setTimeout(() => setScroll(prevState => ({...prevState, recent: false})), 100);
     });
    
    const section = useMemo(() => {
@@ -41,7 +40,7 @@ function App({sectionProps}) {
             <SectionContext.Provider value={section}>
                <Main>
                   <Navigation/>
-                  <Content onScroll={onScroll}>  
+                  <Content onScroll={onScroll}>
                      { sectionProps.map(s => <s.elem key={s.name} id={s.name.toLowerCase()}/>) }
                   </Content>
                </Main>

@@ -4,7 +4,7 @@
    "contentBgColor": "#FFFFF9",
    "color": "#000000",
    "accentColor": "#376283",
-   "boxShadowSmall": "5px 5px 10px #b3b3b0, -5px -5px 10px #ffffff",
+   "boxShadowSmall": "2px 2px 4px #b3b3b0, -2px -2px 4px #ffffff",
    "boxShadowBig": "10px 10px 20px #b3b3b0, -10px -10px 20px #ffffff",
    "boxShadowInset": "inset 2px 2px 4px #b3b3b0, inset -2px -2px 4px #ffffff",
    "boxShadowInsetAccent": "inset 2px 2px 4px #28475e, inset -2px -2px 4px #467da8 !important",

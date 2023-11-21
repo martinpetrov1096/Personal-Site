@@ -29,7 +29,7 @@ export default function Navigation() {
 
 
    return (
-      <Nav scrolled={scroll.amount > .1}>
+      <Nav recentScroll={scroll.recent} scrolled={scroll.amount > .2}>
          <ButtonCont>
             { sections.map((s, i) => <Button key={s.name + '_navbar'} numSections={sections.length} style={getBtnStyles(i, transition) } href={'#' + s.name.toLowerCase()}>{s.name}</Button>) }
          </ButtonCont>
@@ -43,12 +43,12 @@ export default function Navigation() {
 const Nav = styled.nav`
    position: fixed;
    z-index: 5;
-   box-shadow: ${(props) => props.scrolled ? props.theme.boxShadowSmall : 'none'};
+   box-shadow: ${props => !props.scrolled ? 'none' : props.recentScroll ? props.theme.boxShadowBig : props.theme.boxShadowSmall};
    padding: ${props => props.scrolled ? '10px' : '50px' } 10px 10px 10px;
    width: calc(100% - 20px);
    height: 45px;
    background: ${(props) => props.theme.bgColor};
-   transition: padding .3s ease-in-out, box-shadow .2s ease-out;
+   transition: padding .3s ease-in-out, box-shadow .5s ease-out;
    display: flex;
    flex-flow: row;
    align-items: center;
