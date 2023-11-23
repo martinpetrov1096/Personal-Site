@@ -6,7 +6,7 @@ import skills from '../config/skills.json';
 export default () => {
 
    return (
-      <Section visible="dark" id="skills">
+      <Section $visible="dark" id="skills">
          <Title>Skills</Title>
          <Skill title="Languages" skills={skills['languages']}/>
          <Skill title="Front End" skills={skills['frontend']}/>

@@ -14,13 +14,15 @@ import { Title, Subtitle } from '../styles/global';
  */
  const Resume = () => {
    let scroll = useContext(ScrollContext);
-   const busyText = useRef(null);
+   const busyTextRef = useRef(null);
+   const subtitleTextRef = useRef(null);
+
 
    useEffect(() => {
       window.addEventListener('resize', () => {
-         busyText.current.style.position = 'static';
+      //   busyTextRef.current.style.position = 'static';
 
-         console.log(busyText.current.getBoundingClientRect().top)
+        // const subTitleHeight = subtitleTextRef.current.getBoundingClientRect().top;
       })
 
 
@@ -28,15 +30,16 @@ import { Title, Subtitle } from '../styles/global';
 
 
    return(
-      <Section visible="light" id="resume">
+      <Section id="resume">
+         <h1>Hwllo</h1>
          <SectionWrapper>
          
             <ColWrapper>
-               <Img src='resume/resume.svg' alt="Martin Petrov's Resume" unshift={scroll.value !== false && scroll.value >  .2}/>
+               <Img src='resume/resume.svg' alt="Martin Petrov's Resume" $unshift={scroll.value !== false && scroll.value >  .2}/>
             </ColWrapper>
             <ColWrapper>
-               <BusyTitle ref={busyText}>Busy?</BusyTitle>
-               <Subtitle>Here's my resume</Subtitle>
+               <BusyTitle ref={busyTextRef}>Busy?</BusyTitle>
+               <Subtitle ref={subtitleTextRef}>Here's my resume</Subtitle>
                <DownloadButton/>
             </ColWrapper>
          </SectionWrapper>
@@ -65,11 +68,10 @@ const ColWrapper = styled.div`
 
 
 const Img = styled.img`
-   position: relative;
    width: 40vw;
    height: auto;
    z-index: 1;
-   box-shadow: ${(props) => props.unshift 
+   box-shadow: ${(props) => props.$unshift 
       ? props.theme.boxShadowSmall 
       : props.theme.boxShadowBig};
    overflow-x: hidden;
@@ -78,7 +80,7 @@ const Img = styled.img`
    /**
     * Unshift the image if we are on the resume section
    */
-   transform: ${(props) => props.unshift 
+   transform: ${(props) => props.$unshift 
       ? `translate3d(0,0,0) rotate(0) scale(1)` 
       : `translate3d(-20vw, -60vh, 0) rotate(-22deg) scale(1.2)`};
 
@@ -88,7 +90,7 @@ const Img = styled.img`
 `;
 
 const BusyTitle = styled(Title)`
-   display: stat ;
+   top: 100px;
 `;
 
 const DownloadButton = styled(FaDownload)`

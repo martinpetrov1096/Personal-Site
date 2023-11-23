@@ -24,7 +24,7 @@ const Skill = ({title, skills}) => {
    }, [skills]);
 
    return (
-      <SkillSection visible="dark">
+      <SkillSection $visible="dark">
          <SkillTitle>{title}</SkillTitle>
          {icons}
       </SkillSection>

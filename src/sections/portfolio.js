@@ -6,7 +6,7 @@ import { Section, Title } from '../styles/global';
 export default ({ curTab }) => {
 
    return (
-      <Section visible="dark" id="portfolio"> 
+      <Section $visible="dark" id="portfolio"> 
             <Title>Portfolio</Title>
             <ProjectsWrapper>
                {

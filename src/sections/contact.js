@@ -7,7 +7,7 @@ import ContactForm from '../components/contact-form';
 export default () => {
 
    return (
-      <FullHeightSection visible="light" id="contact">
+      <FullHeightSection $visible="light" id="contact">
          <Title>Contact</Title>
          <Subtitle>Shoot me an email, or give me a call.</Subtitle>
          <ContactInfo/>

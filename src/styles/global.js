@@ -15,9 +15,7 @@ export const Section = styled.section`
    color: ${(props) => props.theme.color};
 
    /* Hide the section if on the next page */
-   opacity: ${(props) => props.theme.name === props.visible ? '1' : '0'};
    transition: ${(props) => props.theme.transition};
-   transform: ${(props) => props.theme.name === props.visible ? 'translateX(0)' : 'translateX(150px)'};
 
    display: flex;
    flex-flow: column nowrap;

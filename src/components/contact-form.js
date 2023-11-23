@@ -26,7 +26,7 @@ const ContactForm = () => {
 
    if (!sent) {
       return (
-         <Card onSubmit={sendEmail} sent={sent}>
+         <Card onSubmit={sendEmail} $sent={sent}>
             <Email value={email} onChange={(e) => setEmail(e.target.value)} onClick={(e) => e.target.select()}/>
             <Subject value={subject} onChange={(e) => setSubject(e.target.value)} onClick={(e) => e.target.select()}/>
             <Name value={name} onChange={(e) => setName(e.target.value)} onClick={(e) => e.target.select()}/>

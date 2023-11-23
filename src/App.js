@@ -40,7 +40,7 @@ export default function App() {
     */
    useEffect(() => {
       const onScroll = (e => {
-         setScroll({ value: window.scrollY / (window.innerHeight), recent: true});
+         setScroll({ value: (window.scrollY / (window.innerHeight)), recent: true});
          setTimeout(() => setScroll(prevState => ({...prevState, recent: false})), 1000);
        });
       window.addEventListener('scroll', onScroll);

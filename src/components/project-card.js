@@ -20,7 +20,7 @@ const ProjectCard = ({project}) => {
             <BrowserButton/>
             <BrowserButton/>
          </BrowserWindow>
-         <Content fontColor={project.fontColor}>
+         <Content $fontColor={project.fontColor}>
             <Title href={project.url} target="_blank" rel="noopener noreferrer">{project.name}</Title>
             <Github href={project.githubUrl} target="_blank" rel="noopener noreferrer">
                {github}

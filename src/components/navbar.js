@@ -29,9 +29,9 @@ const NavBar = () => {
    };
 
    return (
-      <Nav recentScroll={scroll.recent} scrolled={scroll.value > .2}>
+      <Nav $scrolled={scroll ? scroll.value > .2 : false}>
          <ButtonCont>
-            { sections.map((s, i) => <Button key={s.name + '_navbar'} numSections={sections.length} style={getBtnStyles(i, transition) } href={'#' + s.name.toLowerCase()}>{s.name}</Button>) }
+            { sections.map((s, i) => <Button key={s.name + '_navbar'} $numsections={sections.length} style={getBtnStyles(i, transition) } href={'#' + s.name.toLowerCase()}>{s.name}</Button>) }
          </ButtonCont>
       </Nav>
    )
@@ -45,9 +45,9 @@ export default NavBar;
 const Nav = styled.nav`
    position: fixed;
    z-index: 5;
-   /* box-shadow: ${props => !props.scrolled ? 'none' : props.recentScroll ? props.theme.boxShadowBig : props.theme.boxShadowSmall}; */
-   box-shadow: ${props => props.scrolled ? props.theme.boxShadowBig : 'none'};
-   padding: ${props => props.scrolled ? '10px' : '50px' } 10px 10px 10px;
+   /* box-shadow: ${props => !props.$scrolled ? 'none' : props.recentScroll ? props.theme.boxShadowBig : props.theme.boxShadowSmall}; */
+   box-shadow: ${props => props.$scrolled ? props.theme.boxShadowBig : 'none'};
+   padding: ${props => props.$scrolled ? '10px' : '50px' } 10px 10px 10px;
    width: calc(100% - 20px);
    height: 45px;
    background: ${(props) => props.theme.bgColor};
@@ -55,7 +55,6 @@ const Nav = styled.nav`
    display: flex;
    flex-flow: row;
    align-items: center;
-   test: ${props => (props.scrolled & props.recentScroll)};
    justify-content: flex-start;
    /* @media screen and (max-width: 600px) {
       justify-content: space-around;
@@ -92,11 +91,11 @@ const Button = styled.a`
    font-weight: 400;
    
    
-   background-size: ${props => props.numSections * 100}px 50px;
+   background-size: ${props => props.$numsections * 100}px 50px;
    background-repeat: no-repeat;
-   background-image: linear-gradient(to right, ${props => props.theme.bgColor} ${props => (props.numSections - 1) * 100}px,
-                                               ${props => props.theme.accentColor} ${props => (props.numSections - 1) * 100}px,
-                                               ${props => props.theme.accentColor} ${props => props.numSections * 100}px);
+   background-image: linear-gradient(to right, ${props => props.theme.bgColor} ${props => (props.$numsections - 1) * 100}px,
+                                               ${props => props.theme.accentColor} ${props => (props.$numsections - 1) * 100}px,
+                                               ${props => props.theme.accentColor} ${props => props.$numsections * 100}px);
    transition: background-position-x .3s ease-in-out .3s,
                color .3s ease-in-out .3s,
                box-shadow .5s ease-in-out 0s;
