@@ -40,6 +40,10 @@ export const Subtitle = styled.h2`
    transition: ${(props) => props.theme.transition}
 `;
 
+export const Paragraph = styled.p`
+
+`
+
 export const Button = styled.button`
    box-shadow: ${(props) => props.theme.boxShadowInsetAccent};
    border: none;

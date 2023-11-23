@@ -1,8 +1,10 @@
 import styled from 'styled-components';
 import { Section, Title, Subtitle } from '../styles/global';
-import { ContactInfo } from '../components/contact-info';
-import { ContactForm } from '../components/contact-form';
-export const Contact = () => {
+import ContactInfo from '../components/contact-info';
+import ContactForm from '../components/contact-form';
+
+
+export default () => {
 
    return (
       <FullHeightSection visible="light" id="contact">

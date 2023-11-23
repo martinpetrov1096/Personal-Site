@@ -28,7 +28,7 @@ const Wrapper = styled.div`
    flex-flow: column nowrap;
    justify-content: center;
    align-items: center;
-
+   text-align: center;
    transition: ${(props) => props.theme.transition};
 
    > h2 {

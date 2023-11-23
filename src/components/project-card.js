@@ -1,6 +1,8 @@
 import { useMemo } from 'react';
 import styled from 'styled-components';
-export const ProjectCard = ({project}) => {
+
+
+const ProjectCard = ({project}) => {
    
    const icons = useMemo(() => {
       return project.tools.map((t) => <i key={t} className={`devicon-${t}-plain`}></i>)
@@ -32,6 +34,11 @@ export const ProjectCard = ({project}) => {
       </Project>
    );
 }
+export default ProjectCard;
+
+///////////////////////////////////////////////////////////////////
+///////////////////////////// CSS /////////////////////////////////
+///////////////////////////////////////////////////////////////////
 
 const Project = styled.div` 
    margin: max(1%, 20px) 1%;

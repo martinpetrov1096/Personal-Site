@@ -1,87 +1,68 @@
-import React, { useCallback, useMemo } from 'react';
-import TextTransition from 'react-text-transition';
+import React, { useContext, useEffect, useState} from 'react';
+import { ScrollContext } from '../App';
+import { SectionContext } from '../App';
 import styled from 'styled-components'
-import sections from '../config/sections.json';
 
-export const NavBar = ({scroll, curTab}) => {
 
-   const isActive = useCallback((tab) => {
-      return tab === curTab;
-   }, [curTab]);
+const NavBar = () => {
+   let sections = useContext(SectionContext);
+   let scroll = useContext(ScrollContext);
+   
+   let [curTab, setCurTab] = useState(0);
+   let [transition, setTransition] = useState(false);
 
-   const buttons = useMemo(() => {
-      return sections.map((s => (
-         <Button href={'#' + s.toLowerCase()} key={s} active={isActive(s)} />
-      )));
-   }, [isActive]);
+   useEffect(() => {
+      if (curTab !== sections.findIndex(s => s.active)) {
+         setCurTab(sections.findIndex(s => s.active));
+         setTransition(true);
+         setTimeout(() => setTransition(false), 475);
+      }
+   }, [sections, curTab]);
+
+   const getBtnStyles = (idx, transition) => {
+      return {
+         'backgroundPositionX': `${-100 * ( idx - curTab - 1 + (sections.length))}px`,
+         'color': `${curTab === idx ? 'white' : 'black'}`,
+         'animation': `${curTab === idx ? 'shadowComing 1s 0' : 'shadowLeaving 1s 0s'}`,
+         'boxShadow': transition && curTab === idx ? 'inset 3px 3px 6px #b3b3b0, inset -3px -3px 6px #ffffff' : 'none',
+      };
+   };
 
    return (
-      <Nav raised={scroll}>
-         <CurTab>
-            <TextTransition
-               text={curTab}
-               direction="down"
-               noOverflow={true}
-               inline={true}
-            />
-         </CurTab>
+      <Nav recentScroll={scroll.recent} scrolled={scroll.value > .2}>
          <ButtonCont>
-            {buttons}
+            { sections.map((s, i) => <Button key={s.name + '_navbar'} numSections={sections.length} style={getBtnStyles(i, transition) } href={'#' + s.name.toLowerCase()}>{s.name}</Button>) }
          </ButtonCont>
       </Nav>
-   );
+   )
 }
+export default NavBar;
+
 ///////////////////////////////////////////////////////////////////
 ///////////////////////////// CSS /////////////////////////////////
 ///////////////////////////////////////////////////////////////////
 
 const Nav = styled.nav`
    position: fixed;
-   z-index: 99;
-   /* 
-    * If not at top of page, give a shadow to 
-    * navbar
-   */
-   box-shadow: ${(props) => props.raised 
-      ? props.theme.boxShadowSmall 
-      : `none`};
-   padding: 10px;
+   z-index: 5;
+   /* box-shadow: ${props => !props.scrolled ? 'none' : props.recentScroll ? props.theme.boxShadowBig : props.theme.boxShadowSmall}; */
+   box-shadow: ${props => props.scrolled ? props.theme.boxShadowBig : 'none'};
+   padding: ${props => props.scrolled ? '10px' : '50px' } 10px 10px 10px;
    width: calc(100% - 20px);
-   height: 50px;
+   height: 45px;
    background: ${(props) => props.theme.bgColor};
-   transition: ${(props) => props.theme.transition}, box-shadow .2s ease-in-out;
-
+   transition: padding .3s ease-in-out, box-shadow .2s ease-out;
    display: flex;
    flex-flow: row;
    align-items: center;
+   test: ${props => (props.scrolled & props.recentScroll)};
    justify-content: flex-start;
-
-   @media screen and (max-width: 400px) {
+   /* @media screen and (max-width: 600px) {
       justify-content: space-around;
-   }
-`;
-
-const CurTab = styled.h3`
-   border-radius: 5px;
-   padding: 10px;
-   min-width: 40px;
-   flex-basis: 100px;
-   flex-shrink: 2;
-   flex-grow: 0;
-   background: ${(props) => props.theme.contentBgColor};
-   color: ${(props) => props.theme.accentColor};
-   font-family: 'Oswald', sans-serif;
-   font-size: 22px;
-   font-weight: 400;
-   text-align: center;
-   box-shadow: ${(props) => props.theme.boxShadowInset};
-   transition: ${(props) => props.theme.transition};
-
-   @media screen and (max-width: 400px) {
-      border-radius: 3px;
-      font-size: 16px;
-      flex-basis: 60px;
+   } */
+   @media screen and (max-width: 600px) {
       padding: 10px;
+      height: 25px;
    }
 `;
 
@@ -89,32 +70,52 @@ const ButtonCont = styled.div`
    flex-basis: 300px;
    flex-grow: 1;
    max-width: 500px;
+   padding-left: 10px;
    display: flex;
    flex-flow: row nowrap;
    justify-content: space-around;
-
-   @media screen and (max-width: 400px) {
-      flex-basis: 150px;
+   @media screen and (max-width: 600px) {
+      padding: 0;
    }
-
 `;
 
 const Button = styled.a`
-   border-radius: 100%;
+   border-radius: 5px;
    border: none;
-   height: 30px;
-   width: 30px;
-   background-color: ${(props) => props.active 
-      ? props.theme.accentColor
-      : props.theme.contentBgColor};
-   box-shadow: ${(props) => props.active
-      ? props.theme.boxShadowInsetAccent
-      : props.theme.boxShadowInset};
-
-   transition: ${(props) => props.theme.transition}, background-color .5s ease-in-out, background-image 1s ease-in-out, box-shadow .5s ease-in-out;
+   padding: 12px;
    
-   @media screen and (max-width: 400px) {
-      height: 20px;
-      width: 20px;
+   width: 55px;
+   
+   text-decoration: none;
+   font-family: 'Oswald', sans-serif;
+   font-size: 16px;
+   font-weight: 400;
+   
+   
+   background-size: ${props => props.numSections * 100}px 50px;
+   background-repeat: no-repeat;
+   background-image: linear-gradient(to right, ${props => props.theme.bgColor} ${props => (props.numSections - 1) * 100}px,
+                                               ${props => props.theme.accentColor} ${props => (props.numSections - 1) * 100}px,
+                                               ${props => props.theme.accentColor} ${props => props.numSections * 100}px);
+   transition: background-position-x .3s ease-in-out .3s,
+               color .3s ease-in-out .3s,
+               box-shadow .5s ease-in-out 0s;
+
+   &:focus {
+      outline: none;
    }
-`;
+   &:hover {
+      text-decoration: underline;  
+   }
+   display: flex;
+   flex-flow: row;
+   justify-content: center;
+   align-items: center;
+
+   @media screen and (max-width: 600px) {
+      border-radius: 3px;
+      width: 40px;
+      padding: 7px;
+      font-size: 13px;
+   }
+ `;

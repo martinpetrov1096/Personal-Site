@@ -1,7 +1,9 @@
-import { Skill } from '../components/skill';
+import  Skill from '../components/skill';
 import { Section, Title } from '../styles/global'; 
 import skills from '../config/skills.json';
-export const Skills = () => {
+
+
+export default () => {
 
    return (
       <Section visible="dark" id="skills">

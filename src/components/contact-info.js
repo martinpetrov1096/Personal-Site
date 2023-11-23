@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import contact from '../config/contact.json';
 
-export const ContactInfo = () => {
+const ContactInfo = () => {
 
    return (
       <ContactWrapper>
@@ -11,9 +11,12 @@ export const ContactInfo = () => {
       </ContactWrapper>
 
    );
-
 };
+export default ContactInfo;
 
+///////////////////////////////////////////////////////////////////
+///////////////////////////// CSS /////////////////////////////////
+///////////////////////////////////////////////////////////////////
 
 const ContactWrapper = styled.div`
 

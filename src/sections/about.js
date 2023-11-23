@@ -2,7 +2,8 @@ import styled from 'styled-components';
 import { Section, Title } from '../styles/global';
 import about from '../config/about.json';
 
-export const About = ({ curTab }) => {
+
+export default ({ curTab }) => {
    
    return (
       <Section visible="light" id="about">

@@ -1,7 +1,8 @@
 import { useMemo } from 'react';
 import styled from 'styled-components';
 
-export const Skill = ({title, skills}) => {
+
+const Skill = ({title, skills}) => {
 
    const icons = useMemo(() => {
       return skills.map((s) => {
@@ -29,7 +30,11 @@ export const Skill = ({title, skills}) => {
       </SkillSection>
    );
 }
+export default Skill;
 
+///////////////////////////////////////////////////////////////////
+///////////////////////////// CSS /////////////////////////////////
+///////////////////////////////////////////////////////////////////
 
 const SkillSection = styled.div`
    margin: 40px;

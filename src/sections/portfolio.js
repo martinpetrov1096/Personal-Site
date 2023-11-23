@@ -1,9 +1,9 @@
 import styled from "styled-components";
 import projects from '../config/projects.json';
-import { ProjectCard } from '../components/project-card';
+import ProjectCard from '../components/project-card';
 import { Section, Title } from '../styles/global';
 
-export const Portfolio = ({ curTab }) => {
+export default ({ curTab }) => {
 
    return (
       <Section visible="dark" id="portfolio"> 

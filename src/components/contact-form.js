@@ -1,10 +1,10 @@
 import { useState, useCallback } from 'react';
-import emailjs from 'emailjs-com';
+import emailjs from "@emailjs/browser";
 import styled from 'styled-components';
 import emailConfig from '../config/email.json';
 import { Subtitle } from '../styles/global';
 
-export const ContactForm = () => {
+const ContactForm = () => {
 
    const [name, setName] = useState('');
    const [subject, setSubject] = useState('');
@@ -42,7 +42,11 @@ export const ContactForm = () => {
       );
    }
 }
+export default ContactForm;
 
+///////////////////////////////////////////////////////////////////
+///////////////////////////// CSS /////////////////////////////////
+///////////////////////////////////////////////////////////////////
 
 const Card = styled.form`
    flex: 1 1 50%;
