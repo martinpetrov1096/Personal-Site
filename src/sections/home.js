@@ -16,7 +16,7 @@ export default Home;
 
 const Section = styled.section`
    margin-bottom: 200px;
-   height: 80vh;
+   height: 100vh;
    width: 100%;
    display: grid;
    grid-template-areas: 

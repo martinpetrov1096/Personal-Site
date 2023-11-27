@@ -1,19 +1,13 @@
 import styled from 'styled-components';
 
 
-
-/**
- * @visible Takes a parameter that says 
- * what the theme is. Is used to know if
- * the element should be visible or not
- */
 export const Section = styled.section`
    margin-bottom: 200px;
    padding-top: 80px;
    width: 95%;
    max-width: 1800px;
    color: ${(props) => props.theme.color};
-
+   font-family: ${props => props.theme.fontPrimary};
    /* Hide the section if on the next page */
    transition: ${(props) => props.theme.transition};
 
@@ -39,8 +33,17 @@ export const Subtitle = styled.h2`
 `;
 
 export const Paragraph = styled.p`
+   max-width: 800px;
+   font-size: ${(props => props.desktop || '16px;')};
+   line-height: 1.3;
 
-`
+   @media screen and (max-width: 1000px) {
+      font-size:  ${(props => props.tablet || '14px;')}
+   }
+   @media screen and (max-width: 600px) {
+      font-size:  ${(props => props.mobile || '12px;')}
+   }
+`;
 
 export const Button = styled.button`
    box-shadow: ${(props) => props.theme.boxShadowInsetAccent};

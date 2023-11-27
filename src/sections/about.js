@@ -1,9 +1,9 @@
 import styled from 'styled-components';
-import { Section, Title } from '../styles/global';
+import { Section, Title, Paragraph } from '../styles/global';
 import about from '../config/about.json';
 
 
-export default ({ curTab }) => {
+const About = ({ curTab }) => {
    
    return (
       <Section $visible="light" id="about">
@@ -21,18 +21,14 @@ export default ({ curTab }) => {
                </ProfileWrapper>
                <TextWrapper>
                   <Greeting> Hi, I'm Martin</Greeting>
-                  <Tag>
-                     I’m a recent Computer Science graduate from the University
-                     of California, Davis. Over the past couple years I’ve kept 
-                     myself busy by learning as many languages, frameworks, and 
-                     libraries as I can.
+                  <Tag $desktop="20px" $tablet="16px" $mobile="14px">
+                  I graduated from UC Davis in Fall 2020. Since then I've been working as a
+                   <em> Fullstack Software Engineer</em>. Despite working full time, I still love working on projects and
+                  learning new skills in my spare time. If I’m not coding you can find me weightlifting, working on my
+                  cars, or watching movies.
                   </Tag>
-                  <Tag>
-                     I'm a very passionate and capable <em>Fullstack Software Engineer</em>
-                  </Tag>
-                  <Tag>
-                     Keep scrolling to see some of my most recent projects,the 
-                     tools I use, and my contact information
+                  <Tag $desktop="20px" $tablet="16px" $mobile="14px">
+                  Keep scrolling to learn a little bit about my most recent projects and my contact information. 
                   </Tag>
                </TextWrapper>
          </AboutWrapper>
@@ -41,7 +37,7 @@ export default ({ curTab }) => {
    );
 
 }
-
+export default About;
 
 
 
@@ -56,11 +52,8 @@ const AboutWrapper = styled.div`
 
 const ProfileWrapper = styled.div`
    flex: 0 1 400px;
-
-
    display: flex;
    flex-flow: column nowrap;
-
 `;
 
 const TextWrapper = styled.div`
@@ -69,14 +62,13 @@ const TextWrapper = styled.div`
 
    display: flex;
    flex-flow: column nowrap;
-   align-items: flex-start;
+   align-items: center;
 `;
 
 const ProfilePicture = styled.img`
    border-radius: 50%;
    width: 100%;
    height: auto;
-   
 `;
 
 
@@ -115,14 +107,14 @@ const Greeting = styled(Title)`
    padding-bottom: 20px;
 `;
 
-const Tag = styled.p`
+const Tag = styled(Paragraph)`
    padding-bottom: 50px;
-   max-width: 900px;
-   font-size: 22px;
-   line-height: 1.5;
    > em {
       font-weight: 700;
-      font-size: 28px;
-      
+      font-size: 22px;
+      display: inline-block;
+      @media screen and (max-width: 600px) {
+         font-size: 20px;
+      }
    }
 `;

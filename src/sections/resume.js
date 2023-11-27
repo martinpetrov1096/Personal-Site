@@ -1,7 +1,6 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useRef } from 'react';
 import { useContext } from 'react';
 import styled from 'styled-components';
-import StickyNote from '../components/stickyNote';
 import { Section } from '../styles/global';
 import { ScrollContext } from '../App';
 import { FaDownload } from "react-icons/fa";
@@ -17,21 +16,8 @@ import { Title, Subtitle } from '../styles/global';
    const busyTextRef = useRef(null);
    const subtitleTextRef = useRef(null);
 
-
-   useEffect(() => {
-      window.addEventListener('resize', () => {
-      //   busyTextRef.current.style.position = 'static';
-
-        // const subTitleHeight = subtitleTextRef.current.getBoundingClientRect().top;
-      })
-
-
-   }, []);
-
-
    return(
       <Section id="resume">
-         <h1>Hwllo</h1>
          <SectionWrapper>
          
             <ColWrapper>
@@ -39,7 +25,7 @@ import { Title, Subtitle } from '../styles/global';
             </ColWrapper>
             <ColWrapper>
                <BusyTitle ref={busyTextRef}>Busy?</BusyTitle>
-               <Subtitle ref={subtitleTextRef}>Here's my resume</Subtitle>
+               <Subtitle ref={subtitleTextRef}>Here's the summarized version.</Subtitle>
                <DownloadButton/>
             </ColWrapper>
          </SectionWrapper>
@@ -47,36 +33,31 @@ import { Title, Subtitle } from '../styles/global';
    );
 }
 export default Resume;
+
 ///////////////////////////////////////////////////////////////////
 ///////////////////////////// CSS /////////////////////////////////
 ///////////////////////////////////////////////////////////////////
+
 const SectionWrapper = styled.div`
    display: flex;
    flex-wrap: wrap;
    justify-content: space-around;
    align-items: center;
    width: 100%;
-   padding-top: 500px;
-
-`
-
+   padding-top: 200px;
+`;
 const ColWrapper = styled.div`
    display: flex;
    flex-flow: column nowrap;
    justify-content: center;
 `;
-
-
 const Img = styled.img`
    width: 40vw;
    height: auto;
    z-index: 1;
-   box-shadow: ${(props) => props.$unshift 
-      ? props.theme.boxShadowSmall 
-      : props.theme.boxShadowBig};
+   box-shadow: ${(props) => props.$unshift ? props.theme.boxShadowSmall : props.theme.boxShadowBig};
    overflow-x: hidden;
    transition: all .5s ease-in-out;
-
    /**
     * Unshift the image if we are on the resume section
    */
@@ -88,11 +69,8 @@ const Img = styled.img`
       width: 80vw;
    }
 `;
-
 const BusyTitle = styled(Title)`
-   top: 100px;
 `;
-
 const DownloadButton = styled(FaDownload)`
  
    border-radius: 100%;
@@ -102,5 +80,6 @@ const DownloadButton = styled(FaDownload)`
    font-family: ${(props) => props.theme.subtitleFont};
    font-size: 24px;
    cursor: pointer;
+   align-self: center;
 
 `;

@@ -31,7 +31,7 @@ const NavBar = () => {
    return (
       <Nav $scrolled={scroll ? scroll.value > .2 : false}>
          <ButtonCont>
-            { sections.map((s, i) => <Button key={s.name + '_navbar'} $numsections={sections.length} style={getBtnStyles(i, transition) } href={'#' + s.name.toLowerCase()}>{s.name}</Button>) }
+            { sections.map((s, i) => <Button key={s.name + '_navbar'} $numsections={sections.length} style={getBtnStyles(i, transition)} href={'#' + s.name.toLowerCase()}>{s.name}</Button>) }
          </ButtonCont>
       </Nav>
    )
@@ -60,8 +60,8 @@ const Nav = styled.nav`
       justify-content: space-around;
    } */
    @media screen and (max-width: 600px) {
-      padding: 10px;
-      height: 25px;
+      padding: 8px 10px;
+      height: 20px;
    }
 `;
 
@@ -82,7 +82,7 @@ const Button = styled.a`
    border-radius: 5px;
    border: none;
    padding: 12px;
-   
+   margin: 5px;
    width: 55px;
    
    text-decoration: none;
@@ -113,8 +113,9 @@ const Button = styled.a`
 
    @media screen and (max-width: 600px) {
       border-radius: 3px;
-      width: 40px;
-      padding: 7px;
-      font-size: 13px;
+      width: auto;
+      padding: 5px;
+      font-size: 12px;
+      margin: 1px;
    }
  `;
