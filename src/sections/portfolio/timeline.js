@@ -9,10 +9,10 @@ const Timeline = ({timelineItems}) => {
             <TimelineLine />
                 <TimelineItemsWrapper>
                     {timelineItems.map(t => (
-                            <TimelineItemWrapper key={t.description}>
+                            <TimelineItemWrapper key={t.key}>
                                 <TextWrapper>
                                     <Title>{t.title}</Title>
-                                    <Paragraph>{t.description}</Paragraph>
+                                    {t.description.map((p, i) => <Paragraph key={i}>{p}</Paragraph>)} 
                                 </TextWrapper>
                                 <ImageWrapper>
                                     <Image src={t.image}/>
@@ -51,6 +51,7 @@ const TimelineLine = styled.div`
 
     @media screen and (max-width: 600px) {
       display: none;
+      margin: 0;
    }
 `;
 
@@ -73,7 +74,10 @@ const TimelineItemWrapper = styled.div`
       flex-flow: column-reverse nowrap;
       justify-content: center;
       align-items: center;
-   }
+    }
+    @media screen and (max-width: 600px) {
+        margin: 0px 0;
+    }    
 `;
 const TextWrapper = styled.div`
     flex: 1 1 500px;
@@ -81,6 +85,7 @@ const TextWrapper = styled.div`
     margin-right: 100px;
 
     @media screen and (max-width: 1000px) {
+        flex: 1 1 auto;
         margin-right: 0;
    }
 `;

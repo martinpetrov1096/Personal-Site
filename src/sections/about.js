@@ -21,7 +21,7 @@ const About = ({ curTab }) => {
                </ProfileWrapper>
                <TextWrapper>
                   <Greeting> Hi, I'm Martin</Greeting>
-                  <Tag $desktop="20px" $tablet="16px" $mobile="14px">
+                  <Tag $desktop="22px" $tablet="16px" $mobile="14px">
                   I graduated from UC Davis in Fall 2020. Since then I've been working as a
                    <em> Fullstack Software Engineer</em>. Despite working full time, I still love working on projects and
                   learning new skills in my spare time. If I’m not coding you can find me weightlifting, working on my
@@ -108,11 +108,10 @@ const Greeting = styled(Title)`
 `;
 
 const Tag = styled(Paragraph)`
-   padding-bottom: 50px;
+   padding-bottom: 30px;
    > em {
       font-weight: 700;
       font-size: 22px;
-      display: inline-block;
       @media screen and (max-width: 600px) {
          font-size: 20px;
       }

@@ -1,5 +1,6 @@
 [
     {
+        "key": 0,
         "title": "WhatToWatch",
         "subtitle": "A quick and easy way to coordinate with friends on what to watch",
         "description": "I love movies. Anything from the classics to artistic .  . . Deciding on a movie to watch at home has always been a struggle for me. And it’s even more difficult when you’re with friends and have to all agree on a movie. This project started off as a bit of a clone of “Restaurant Tinder”, a project I had to complete in my web development class. It’s exactly what it sounds like. You swipe left or right on restaurants and the game is over when everyone swipes right on the same place.  ",
@@ -11,18 +12,30 @@
          ],
         "timelineItems": [
             {
+                "key": 0,
                 "title": "Designing",
-                "description": "Lorem ipsum donlor sit amet, consectetur adipiscing elit. Donec convallis luctus bibendum. Phasellus accumsan nunc enim, ut lacinia arcu egestas varius. Duis tempor urna in leo vestibulum, non convallis lacus ullamcorper. Donec in tincidunt erat. Cras ac imperdiet dui, at laoreet lectus. non convallis lacus ullamcorper. Donec in tincidunt erat. Cras ac imperdiet dui, at laoreet lectus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec convallis luctus bibendum. Phasellus accumsan nunc enim, ut lacinia arcu egestas varius. Duis tempor urna in leo vestibulum, non convallis lacus ullamcorper. Donec in tincidunt erat. Cras ac imperdiet dui, at laoreet lectus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec convallis luctus bibendum. Phasellus accumsan nunc enim, ut lacinia arcu egestas varius. Duis tempor urna in leo vestibulum, non convallis lacus ullamcorper. Donec in tincidunt erat. Cras ac imperdiet dui, at laoreet lectus",
+                "description": [
+                    "Shaping the design for WhatToWatch was a process driven by my enthusiasm for creating visually interesting interfaces. Despite lacking formal UI/UX training, I've always found these areas intriguing, particularly when it comes to crafting pleasing animations—something that lets my perfectionist side loose.", 
+                    "While exploring TheMovieDb API, I stumbled upon the fact that each movie had stunning artwork assets. This discovery perfectly fit my vision for a card-style UI, adding a nice visual touch to the project without making it overly dramatic"
+                ],
                 "image": "project-images/what-to-watch.png"
             },
             {
+                "key": 1,
                 "title": "Expanding Features",
-                "description": "Lorem ipsum doklor sit amet, consectetur adipiscing elit. Donec convallis luctus bibendum. Phasellus accumsan nunc enim, ut lacinia arcu egestas varius. Duis tempor urna in leo vestibulum, non convallis lacus ullamcorper. Donec in tincidunt erat. Cras ac imperdiet dui, at laoreet lectus. non convallis lacus ullamcorper. Donec in tincidunt erat. Cras ac imperdiet dui, at laoreet lectus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec convallis luctus bibendum. Phasellus accumsan nunc enim, ut lacinia arcu egestas varius. Duis tempor urna in leo vestibulum, non convallis lacus ullamcorper. Donec in tincidunt erat. Cras ac imperdiet dui, at laoreet lectus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec convallis luctus bibendum. Phasellus accumsan nunc enim, ut lacinia arcu egestas varius. Duis tempor urna in leo vestibulum, non convallis lacus ullamcorper. Donec in tincidunt erat. Cras ac imperdiet dui, at laoreet lectus",
+                "description": [
+                    "Shaping cdathe design for WhatToWatch was a process driven by my enthusiasm for creating visually interesting interfaces. Despite lacking formal UI/UX training, I've always found these areas intriguing, particularly when it comes to crafting pleasing animations—something that lets my perfectionist side loose.", 
+                    "While exploring TheMovieDb API, I stumbled upon the fact that each movie had stunning artwork assets. This discovery perfectly fit my vision for a card-style UI, adding a nice visual touch to the project without making it overly dramatic"
+                ],
                 "image": "project-images/what-to-watch.png"
             },
             {
+                "key": 2,
                 "title": "Designing",
-                "description": "Lorem ipsum dolokr sit amet, consectetur adipiscing elit. Donec convallis luctus bibendum. Phasellus accumsan nunc enim, ut lacinia arcu egestas varius. Duis tempor urna in leo vestibulum, non convallis lacus ullamcorper. Donec in tincidunt erat. Cras ac imperdiet dui, at laoreet lectus. non convallis lacus ullamcorper. Donec in tincidunt erat. Cras ac imperdiet dui, at laoreet lectus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec convallis luctus bibendum. Phasellus accumsan nunc enim, ut lacinia arcu egestas varius. Duis tempor urna in leo vestibulum, non convallis lacus ullamcorper. Donec in tincidunt erat. Cras ac imperdiet dui, at laoreet lectus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec convallis luctus bibendum. Phasellus accumsan nunc enim, ut lacinia arcu egestas varius. Duis tempor urna in leo vestibulum, non convallis lacus ullamcorper. Donec in tincidunt erat. Cras ac imperdiet dui, at laoreet lectus",
+                "description": [
+                    "Shaping tcdsdfshe design for WhatToWatch was a process driven by my enthusiasm for creating visually interesting interfaces. Despite lacking formal UI/UX training, I've always found these areas intriguing, particularly when it comes to crafting pleasing animations—something that lets my perfectionist side loose.", 
+                    "While exploring TheMovieDb API, I stumbled upon the fact that each movie had stunning artwork assets. This discovery perfectly fit my vision for a card-style UI, adding a nice visual touch to the project without making it overly dramatic"
+                ],
                 "image": "project-images/what-to-watch.png"
             }
 

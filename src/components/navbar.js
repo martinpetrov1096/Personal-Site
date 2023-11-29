@@ -83,7 +83,6 @@ const Button = styled.a`
    border: none;
    padding: 12px;
    margin: 5px;
-   width: 55px;
    
    text-decoration: none;
    font-family: 'Oswald', sans-serif;

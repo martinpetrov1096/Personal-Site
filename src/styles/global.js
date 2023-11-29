@@ -14,6 +14,13 @@ export const Section = styled.section`
    display: flex;
    flex-flow: column nowrap;
    align-items: center;
+
+   @media screen and (max-width: 1000px) {
+      margin-bottom: 100px;
+   }
+   @media screen and (max-width: 600px) {
+      margin-bottom: 20px;
+   }
 `;
 
 export const Title = styled.h1`
@@ -36,12 +43,14 @@ export const Paragraph = styled.p`
    max-width: 800px;
    font-size: ${(props => props.desktop || '16px;')};
    line-height: 1.3;
+   margin-bottom: 20px;
 
    @media screen and (max-width: 1000px) {
       font-size:  ${(props => props.tablet || '14px;')}
    }
    @media screen and (max-width: 600px) {
-      font-size:  ${(props => props.mobile || '12px;')}
+      font-size:  ${(props => props.mobile || '10px;')}
+      margin-bottom: 10px;
    }
 `;
 

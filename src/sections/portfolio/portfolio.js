@@ -9,7 +9,7 @@ const Portfolio = ({ curTab }) => {
   return (
     <Section id="portfolio">
          {portfolio.map(p =>  (
-            <PortfolioWrapper key={p.description}>
+            <PortfolioWrapper key={p.key}>
                <PortfolioHeader title={p.title} subtitle={p.subtitle} description={p.description} tools={p.tools}/>
 
                <Timeline timelineItems={p.timelineItems}/>

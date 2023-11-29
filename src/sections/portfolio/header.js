@@ -2,6 +2,7 @@ import { useMemo } from 'react';
 import styled from "styled-components";
 import projects from "../../config/projects.json";
 import ProjectCard from "../../components/project-card";
+import { Paragraph } from '../../styles/global';
 
 const PortfolioHeader = ({ title, subtitle, description, tools }) => {
 
@@ -32,7 +33,7 @@ const PortfolioHeader = ({ title, subtitle, description, tools }) => {
         <ToolsWrapper>
             {toolIcons}
         </ToolsWrapper>
-        <Description>{description}</Description>
+        <Paragraph>{description}</Paragraph>
     </Wrapper>
 
   );

@@ -16,8 +16,6 @@ const ContactForm = () => {
 
   let sections = useContext(SectionContext);
 
-  console.log(sections.find(s => s.active === true)?.name === 'CONTACT')
-
   const sendEmail = useCallback((e) => {
     setSent(true);
     e.preventDefault();
@@ -108,6 +106,13 @@ const ContactInput = styled.input.attrs({
   &:focus {
     outline: none;
   }
+
+  @media screen and (max-width: 1000px) {
+    font-size: 20px;
+  }
+  @media screen and (max-width: 600px) {
+    font-size: 13px;
+  }
 `;
 
 const Email = styled(ContactInput).attrs({
@@ -115,7 +120,6 @@ const Email = styled(ContactInput).attrs({
   name: "email",
   placeholder: "Email Address",
 })`
-  font-size: 30px;
 `;
 
 const Subject = styled(ContactInput).attrs({
@@ -139,7 +143,6 @@ const Message = styled.textarea.attrs({
   resize: none;
   background-color: inherit;
   border: none;
-  font-size: 25px;
   font-family: "Indie Flower", cursive;
   &:focus {
     outline: none;
