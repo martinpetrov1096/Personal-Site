@@ -4,6 +4,7 @@ import styled from "styled-components";
 import emailConfig from "../../config/email.json";
 import { Subtitle } from "../../styles/global";
 import { SectionContext } from "../../App";
+import { IoMdSend } from "react-icons/io";
 
 
 
@@ -59,7 +60,10 @@ const ContactForm = () => {
           onChange={(e) => setMessage(e.target.value)}
           onClick={(e) => e.target.select()}
         />
-        <Send />
+        <Send>
+        Send 
+        </Send>
+
       </Card>
     );
   } else {
@@ -149,22 +153,28 @@ const Message = styled.textarea.attrs({
   }
 `;
 
-const Send = styled.input.attrs({
+const Send = styled.button.attrs({
   type: "submit",
   value: "Send",
 })`
   align-self: flex-end;
-  box-shadow: ${(props) => props.theme.boxShadowInset};
   border: none;
   border-radius: 5px;
+  border: 1px solid ${props => props.theme.accentColor};
   padding: 10px;
-  font-family: ${(props) => props.theme.subtitleFont};
-  font-size: 24px;
+  color: ${props => props.theme.accentColor};
+  font-family: ${(props) => props.theme.secondaryFont};
+  font-size: 14px;
+  font-weight: bold;
   transition: all 0.2s ease-in-out;
+  background: none;
+
+
+  display: flex;
+  align-items: center;
+
   &:hover {
     background-color: ${(props) => props.theme.accentColor};
-
-    box-shadow: ${(props) => props.theme.boxShadowInsetAccent};
     color: white;
   }
 `;

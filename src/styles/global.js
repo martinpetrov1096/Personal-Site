@@ -42,14 +42,14 @@ export const Subtitle = styled.h2`
 export const Paragraph = styled.p`
    max-width: 800px;
    font-size: ${(props => props.desktop || '16px;')};
-   line-height: 1.3;
+   line-height: 1.5;
    margin-bottom: 20px;
 
    @media screen and (max-width: 1000px) {
       font-size:  ${(props => props.tablet || '14px;')}
    }
    @media screen and (max-width: 600px) {
-      font-size:  ${(props => props.mobile || '10px;')}
+      font-size:  ${(props => props.mobile || '12px;')}
       margin-bottom: 10px;
    }
 `;

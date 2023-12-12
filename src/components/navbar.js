@@ -5,9 +5,8 @@ import styled from 'styled-components'
 
 
 const NavBar = () => {
-   let sections = useContext(SectionContext);
+   let  sections = useContext(SectionContext);
    let scroll = useContext(ScrollContext);
-   
    let [curTab, setCurTab] = useState(0);
    let [transition, setTransition] = useState(false);
 
@@ -17,7 +16,7 @@ const NavBar = () => {
          setTransition(true);
          setTimeout(() => setTransition(false), 475);
       }
-   }, [sections, curTab]);
+   }, [sections]);
 
    const getBtnStyles = (idx, transition) => {
       return {
@@ -27,11 +26,11 @@ const NavBar = () => {
          'boxShadow': transition && curTab === idx ? 'inset 3px 3px 6px #b3b3b0, inset -3px -3px 6px #ffffff' : 'none',
       };
    };
-
+   
    return (
-      <Nav $scrolled={scroll ? scroll.value > .2 : false}>
+      <Nav  scrolled={scroll.value > .2}>
          <ButtonCont>
-            { sections.map((s, i) => <Button key={s.name + '_navbar'} $numsections={sections.length} style={getBtnStyles(i, transition)} href={'#' + s.name.toLowerCase()}>{s.name}</Button>) }
+            { sections.map((s, i) => <Button key={s.name + '_navbar'} $numSections={sections.length} style={getBtnStyles(i, transition) } href={'#' + s.name.toLowerCase()}>{s.name}</Button>) }
          </ButtonCont>
       </Nav>
    )
@@ -45,9 +44,8 @@ export default NavBar;
 const Nav = styled.nav`
    position: fixed;
    z-index: 5;
-   /* box-shadow: ${props => !props.$scrolled ? 'none' : props.recentScroll ? props.theme.boxShadowBig : props.theme.boxShadowSmall}; */
-   box-shadow: ${props => props.$scrolled ? props.theme.boxShadowBig : 'none'};
-   padding: ${props => props.$scrolled ? '10px' : '50px' } 10px 10px 10px;
+   box-shadow: ${props => props.scrolled ? props.theme.boxShadowBig : 'none'};
+   padding: ${props => props.scrolled ? '10px' : '50px' } 10px 10px 10px;
    width: calc(100% - 20px);
    height: 45px;
    background: ${(props) => props.theme.bgColor};
@@ -88,13 +86,15 @@ const Button = styled.a`
    font-family: 'Oswald', sans-serif;
    font-size: 16px;
    font-weight: 400;
+   color: black;
+   cursor: pointer;
+
    
-   
-   background-size: ${props => props.$numsections * 100}px 50px;
+   background-size: ${props => props.$numSections * 100}px 50px;
    background-repeat: no-repeat;
-   background-image: linear-gradient(to right, ${props => props.theme.bgColor} ${props => (props.$numsections - 1) * 100}px,
-                                               ${props => props.theme.accentColor} ${props => (props.$numsections - 1) * 100}px,
-                                               ${props => props.theme.accentColor} ${props => props.$numsections * 100}px);
+   background-image: linear-gradient(to right, ${props => props.theme.bgColor} ${props => (props.$numSections - 1) * 100}px,
+                                               ${props => props.theme.accentColor} ${props => (props.$numSections - 1) * 100}px,
+                                               ${props => props.theme.accentColor} ${props => props.$numSections * 100}px);
    transition: background-position-x .3s ease-in-out .3s,
                color .3s ease-in-out .3s,
                box-shadow .5s ease-in-out 0s;

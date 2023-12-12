@@ -39,7 +39,9 @@ const About = ({ curTab }) => {
 }
 export default About;
 
-
+///////////////////////////////////////////////////////////////////
+///////////////////////////// CSS /////////////////////////////////
+///////////////////////////////////////////////////////////////////
 
 const AboutWrapper = styled.div`
    width: 100%;
@@ -49,13 +51,11 @@ const AboutWrapper = styled.div`
    justify-content: space-around;
    align-items: flex-start;
 `;
-
 const ProfileWrapper = styled.div`
    flex: 0 1 400px;
    display: flex;
    flex-flow: column nowrap;
 `;
-
 const TextWrapper = styled.div`
    flex: 0 1 1000px;
    font-family: ${(props) => props.theme.paragraphFont};
@@ -70,9 +70,6 @@ const ProfilePicture = styled.img`
    width: 100%;
    height: auto;
 `;
-
-
-
 const ProfileLinkWrapper = styled.div`
    padding: 30px;
    flex: 0 0 100%;
@@ -99,21 +96,29 @@ const ProfileLink = styled.a`
       }
    }
 
+   @media screen and (max-width: 600px) {
+      & > i {
+         font-size: 30px; 
+      }
+   }
+   @media screen and (max-width: 1000px) {
+      & > i {
+         font-size: 40px; 
+      }
+   }
 `;
-
 const Greeting = styled(Title)`
    text-align: center;
    font-weight: 400;
    padding-bottom: 20px;
 `;
-
 const Tag = styled(Paragraph)`
    padding-bottom: 30px;
    > em {
       font-weight: 700;
       font-size: 22px;
       @media screen and (max-width: 600px) {
-         font-size: 20px;
+         font-size: 16px;
       }
    }
 `;

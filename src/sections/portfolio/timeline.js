@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { Paragraph } from '../../styles/global';
-
+import BrowserImage from '../../components/browserImage';
 
 const Timeline = ({timelineItems}) => {
 
@@ -33,14 +33,17 @@ const Wrapper = styled.div`
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-around;
-    margin: 200px 0;
+    margin: 200px 0 100px 0;
+
+    @media screen and (max-width: 600px) {
+      margin: 30px 0;
+   }
 `;
 const TimelineLine = styled.div`
     flex: 0 0 5px;
     width: 5px;
     margin-right: 50px;
     border-radius: 5px;
-
     background-color: black;
     &::before {
         content: 'Timeline';
@@ -63,7 +66,7 @@ const TimelineItemsWrapper = styled.div`
 
 
 const TimelineItemWrapper = styled.div`
-    margin: 125px 0;
+    margin: 50px 0;
 
     display: flex;
     flex-flow: row nowrap;
@@ -90,8 +93,8 @@ const TextWrapper = styled.div`
    }
 `;
 const Title = styled.h2`
-    padding-bottom: 40px;
-    font-size: min(12vw, 150px);
+    padding-bottom: 15px;
+    font-size: min(12vw, 50px);
     font-weight: bold;
 
     @media screen and (max-width: 1000px) {
@@ -102,13 +105,15 @@ const ImageWrapper = styled.div`
     flex: 1 1 300px;
     border-radius: 5px;
     width: 100%;
-
+    max-width: 500px;
     display: flex;
     justify-content: center;
     align-items: center;
 `;
 const Image = styled.img`
     width: 100%;
+    border-radius: 3px;
+
     @media screen and (max-width: 1000px) {
         max-width: 400px;
    }
