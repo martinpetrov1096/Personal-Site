@@ -45,6 +45,7 @@
         "key": 1,
         "title": "Davis Deals",
         "description": "Davis Deals was a collaborative endeavor with my friend Jackie. Drawing from the lessons learned in my previous projects, I recognized the tendency to underestimate project timelines. To keep the scope manageable and deliver within a weekend timeframe, we decided to create a simple website showcasing local Food & Drink deals in Davis, California—our then place of residence.",
+        "projectUrl": "https://martinpetrov1096.github.io/davis-deals/",
         "tools": [
             "typescript",
             "react"
