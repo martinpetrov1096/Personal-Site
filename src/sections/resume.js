@@ -26,7 +26,9 @@ import { Title, Subtitle } from '../styles/global';
             <ColWrapper>
                <BusyTitle ref={busyTextRef}>Busy?</BusyTitle>
                <Subtitle ref={subtitleTextRef}>Here's the summarized version.</Subtitle>
-               <DownloadButton/>
+               <DownloadButtonWrapper href="resume/resume.pdf" download="martin-petrov-resume.pdf">
+                  <DownloadButton/>
+               </DownloadButtonWrapper>
             </ColWrapper>
          </SectionWrapper>
       </Section>
@@ -70,6 +72,10 @@ const Img = styled.img`
    }
 `;
 const BusyTitle = styled(Title)`
+`;
+const DownloadButtonWrapper = styled.a`
+   display: flex;
+   justify-content: center;
 `;
 const DownloadButton = styled(FaDownload)`
  
